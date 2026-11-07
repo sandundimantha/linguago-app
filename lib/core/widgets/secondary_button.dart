@@ -70,25 +70,32 @@ class _SecondaryButtonState extends State<SecondaryButton> {
           ),
         ),
         child: Center(
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              if (widget.icon != null) ...[
-                IconTheme(
-                  data: IconThemeData(color: effectiveText, size: 20),
-                  child: widget.icon!,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                if (widget.icon != null) ...[
+                  IconTheme(
+                    data: IconThemeData(color: effectiveText, size: 20),
+                    child: widget.icon!,
+                  ),
+                  AppSpacing.hGapSm,
+                ],
+                Flexible(
+                  child: Text(
+                    widget.label,
+                    style: textTheme.labelLarge?.copyWith(
+                      color: effectiveText,
+                      letterSpacing: 0.3,
+                    ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ),
-                AppSpacing.hGapSm,
               ],
-              Text(
-                widget.label,
-                style: textTheme.labelLarge?.copyWith(
-                  color: effectiveText,
-                  letterSpacing: 0.3,
-                ),
-              ),
-            ],
+            ),
           ),
         ),
       ),
