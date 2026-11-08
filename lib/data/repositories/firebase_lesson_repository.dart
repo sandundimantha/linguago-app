@@ -243,3 +243,4 @@ class FirebaseLessonRepository extends LessonRepository {
     }
   }
 }
+

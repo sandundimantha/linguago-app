@@ -36,6 +36,12 @@ import '../../features/settings/help_faq_screen.dart';
 import '../../features/settings/notification_settings_screen.dart';
 import '../../features/settings/settings_screen.dart';
 import '../../features/speaking/pronunciation_practice_screen.dart';
+import '../../features/ai_chat/scenario_picker_screen.dart';
+import '../../features/ai_chat/ai_chat_screen.dart';
+import '../../features/premium/paywall_screen.dart';
+import '../../features/premium/checkout_screen.dart';
+import '../../data/models/ai_chat_models.dart';
+import 'package:in_app_purchase/in_app_purchase.dart';
 import '../../features/vocabulary/flashcards_screen.dart';
 import '../../features/vocabulary/review_session_screen.dart';
 import '../../features/vocabulary/vocab_hub_screen.dart';
@@ -281,6 +287,52 @@ GoRouter buildAppRouter(WidgetRef ref) {
         path: '/about',
         parentNavigatorKey: rootNavigatorKey,
         builder: (context, state) => const AboutScreen(),
+      ),
+
+      // ── AI Conversation & Premium Routes ────────────────────────────
+      GoRoute(
+        path: '/ai-scenarios',
+        parentNavigatorKey: rootNavigatorKey,
+        builder: (context, state) => const ScenarioPickerScreen(),
+      ),
+      GoRoute(
+        path: '/ai-chat',
+        parentNavigatorKey: rootNavigatorKey,
+        builder: (context, state) {
+          final scenario = state.extra as ScenarioModel? ??
+              const ScenarioModel(
+                id: 'cafe_order',
+                title: 'Ordering at a Café',
+                subtitle: 'Order coffee and food',
+                category: 'Daily Life',
+                aiRole: 'Barista',
+                userRole: 'Customer',
+                initialAiMessage: 'Hi! What can I get for you today?',
+                level: 'Beginner',
+                iconName: 'local_cafe_rounded',
+                emoji: '☕',
+                backgroundHint: 'Practice ordering politely.',
+              );
+          return AiChatScreen(scenario: scenario);
+        },
+      ),
+      GoRoute(
+        path: '/premium/paywall',
+        parentNavigatorKey: rootNavigatorKey,
+        builder: (context, state) => const PaywallScreen(),
+      ),
+      GoRoute(
+        path: '/premium/checkout',
+        parentNavigatorKey: rootNavigatorKey,
+        builder: (context, state) {
+          final extra = state.extra as Map<String, dynamic>? ?? {};
+          final product = extra['product'] as ProductDetails?;
+          final planIndex = extra['planIndex'] as int? ?? 1;
+          return CheckoutScreen(
+            product: product,
+            planIndex: planIndex,
+          );
+        },
       ),
 
       // ── Main shell (4-tab bottom nav) ───────────────────────────────

@@ -158,6 +158,32 @@ class PracticeScreen extends StatelessWidget {
                 textTheme: textTheme,
                 onTap: () => context.push('/listening'),
               ),
+
+              AppSpacing.vGapSm,
+
+              // AI Conversation Practice
+              _PracticeDrillCard(
+                icon: '🤖',
+                title: 'AI Roleplay Tutor',
+                subtitle: 'Real-time conversation scenarios with friendly grammar corrections',
+                color: const Color(0xFF0EA5E9),
+                colors: colors,
+                textTheme: textTheme,
+                onTap: () => context.push('/ai-scenarios'),
+              ),
+
+              AppSpacing.vGapSm,
+
+              // Premium Upgrade Banner
+              _PracticeDrillCard(
+                icon: '⭐',
+                title: 'LinguaGo Super',
+                subtitle: 'Unlimited AI roleplay, offline lessons, and no ads',
+                color: colors.secondary,
+                colors: colors,
+                textTheme: textTheme,
+                onTap: () => context.push('/premium/paywall'),
+              ),
             ],
           ),
         ),

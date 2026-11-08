@@ -145,3 +145,4 @@ class FirebaseAuthRepository implements AuthRepository {
     }
   }
 }
+

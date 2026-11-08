@@ -76,3 +76,4 @@ class DefaultFirebaseOptions {
     storageBucket: 'linguago-app.appspot.com',
   );
 }
+

@@ -16,6 +16,9 @@ import '../data/models/vocab_grammar_models.dart';
 import '../data/models/audio_track.dart';
 import '../core/services/speech_service.dart';
 import '../core/services/speech_service_impl.dart';
+import '../core/services/ai_tutor_service.dart';
+import '../core/services/ai_tutor_service_impl.dart';
+import '../core/services/in_app_purchase_service.dart';
 import '../features/lesson/controllers/lesson_controller.dart';
 
 // ── Repositories ─────────────────────────────────────────────────────────────
@@ -97,6 +100,32 @@ final dueWordsProvider = FutureProvider<List<VocabWord>>((ref) async {
 
 final speechServiceProvider = Provider<SpeechService>((ref) {
   return SpeechServiceImpl();
+});
+
+final aiTutorServiceImplementationProvider =
+    Provider<AiTutorService>((ref) {
+  return AiTutorServiceImpl();
+});
+
+final inAppPurchaseServiceProvider = Provider<InAppPurchaseService>((ref) {
+  final prefsAsync = ref.watch(preferencesRepositoryProvider);
+  final repo = prefsAsync.valueOrNull;
+  if (repo == null) {
+    throw Exception('PreferencesRepository not ready yet');
+  }
+  final service = InAppPurchaseService(repo.prefs);
+  service.init();
+  ref.onDispose(() => service.dispose());
+  return service;
+});
+
+final isPremiumUserProvider = StateProvider<bool>((ref) {
+  try {
+    final iap = ref.watch(inAppPurchaseServiceProvider);
+    return iap.isPremium();
+  } catch (_) {
+    return false;
+  }
 });
 
 final audioTracksProvider = FutureProvider<List<AudioTrack>>((ref) async {
