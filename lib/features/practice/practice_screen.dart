@@ -179,7 +179,7 @@ class PracticeScreen extends StatelessWidget {
                 icon: '⭐',
                 title: 'LinguaGo Super',
                 subtitle: 'Unlimited AI roleplay, offline lessons, and no ads',
-                color: colors.secondary,
+                color: colors.accent,
                 colors: colors,
                 textTheme: textTheme,
                 onTap: () => context.push('/premium/paywall'),

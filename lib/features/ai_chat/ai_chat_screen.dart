@@ -348,10 +348,10 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
               child: Container(
                 padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
-                  color: colors.secondary.withValues(alpha: 0.12),
+                  color: colors.accent.withValues(alpha: 0.12),
                   borderRadius: BorderRadius.circular(12),
                   border: Border.all(
-                    color: colors.secondary.withValues(alpha: 0.35),
+                    color: colors.accent.withValues(alpha: 0.35),
                   ),
                 ),
                 child: Column(
@@ -360,12 +360,12 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
                     Row(
                       children: [
                         Icon(Icons.auto_fix_high_rounded,
-                            size: 16, color: colors.secondary),
+                            size: 16, color: colors.accent),
                         const SizedBox(width: 6),
                         Text(
                           'Tutor Suggestion',
                           style: TextStyle(
-                            color: colors.secondary,
+                            color: colors.accent,
                             fontSize: 12,
                             fontWeight: FontWeight.w800,
                           ),
@@ -511,3 +511,4 @@ class _AiChatScreenState extends ConsumerState<AiChatScreen> {
     );
   }
 }
+

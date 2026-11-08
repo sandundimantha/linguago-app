@@ -216,8 +216,7 @@ final userPreferencesProvider =
 // ── First-launch Flag ────────────────────────────────────────────────────────
 
 final isFirstLaunchProvider = FutureProvider<bool>((ref) async {
-  final repoAsync = ref.watch(preferencesRepositoryProvider);
-  final repo = await repoAsync.future;
+  final repo = await ref.watch(preferencesRepositoryProvider.future);
   return repo.isFirstLaunch();
 });
 

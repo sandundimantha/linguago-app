@@ -1,8 +1,8 @@
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 class NotificationService {
-  static final NotificationService _instance = NotificationService._internal();
-  factory NotificationService() => _instance;
+  static final NotificationService instance = NotificationService._internal();
+  factory NotificationService() => instance;
   NotificationService._internal();
 
   final FlutterLocalNotificationsPlugin _notifications =
@@ -38,7 +38,7 @@ class NotificationService {
   }) async {
     await init();
     try {
-      await _notifications.cancel(1001); // Cancel existing reminder
+      await _notifications.cancel(id: 1001); // Cancel existing reminder
 
       if (!enabled) return;
 

@@ -100,7 +100,7 @@ class _ScenarioPickerScreenState extends ConsumerState<ScenarioPickerScreen> {
         actions: [
           IconButton(
             tooltip: 'Upgrade to Unlimited',
-            icon: Icon(Icons.star_rounded, color: colors.secondary, size: 28),
+            icon: Icon(Icons.star_rounded, color: colors.accent, size: 28),
             onPressed: () => context.push('/premium/paywall'),
           ),
           const SizedBox(width: 8),
@@ -344,3 +344,4 @@ class _ScenarioPickerScreenState extends ConsumerState<ScenarioPickerScreen> {
     );
   }
 }
+

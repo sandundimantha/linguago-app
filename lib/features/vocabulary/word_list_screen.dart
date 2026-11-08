@@ -4,6 +4,9 @@ import 'package:go_router/go_router.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/utils/tts_service.dart';
+import '../../core/widgets/empty_state_widget.dart';
+import '../../core/widgets/loading_skeleton.dart';
+import '../../core/widgets/app_error_screen.dart';
 import '../../app/providers.dart';
 
 class WordListScreen extends ConsumerStatefulWidget {
@@ -111,8 +114,19 @@ class _WordListScreenState extends ConsumerState<WordListScreen> {
             // Word List
             Expanded(
               child: vocabAsync.when(
-                loading: () => const Center(child: CircularProgressIndicator()),
-                error: (e, _) => Center(child: Text('Error: $e')),
+                loading: () => ListView.separated(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: AppSpacing.screenMargin,
+                    vertical: 8,
+                  ),
+                  itemCount: 6,
+                  separatorBuilder: (_, __) => const SizedBox(height: 12),
+                  itemBuilder: (_, __) => const CardLoadingSkeleton(height: 74),
+                ),
+                error: (e, _) => AppErrorScreen(
+                  message: 'Failed to load words: $e',
+                  onRetry: () => ref.refresh(vocabListProvider),
+                ),
                 data: (words) {
                   final filtered = words.where((w) {
                     final matchesQuery = w.word
@@ -127,13 +141,18 @@ class _WordListScreenState extends ConsumerState<WordListScreen> {
                   }).toList();
 
                   if (filtered.isEmpty) {
-                    return Center(
-                      child: Text(
-                        'No matching words found',
-                        style: textTheme.bodyMedium?.copyWith(
-                          color: colors.mutedText,
-                        ),
-                      ),
+                    return EmptyStateWidget(
+                      icon: Icons.menu_book_rounded,
+                      title: 'No Words Found',
+                      message:
+                          'No vocabulary entries match your current search or category filter.',
+                      actionLabel: 'Reset Filters',
+                      onAction: () {
+                        setState(() {
+                          _searchQuery = '';
+                          _selectedCategory = 'All';
+                        });
+                      },
                     );
                   }
 

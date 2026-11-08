@@ -361,7 +361,7 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
                           padding: const EdgeInsets.symmetric(
                               horizontal: 8, vertical: 2),
                           decoration: BoxDecoration(
-                            color: colors.secondary,
+                            color: colors.accent,
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: Text(
@@ -400,3 +400,4 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
     );
   }
 }
+

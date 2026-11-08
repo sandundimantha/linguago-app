@@ -102,7 +102,7 @@ class FirebaseLessonRepository extends LessonRepository {
     final ref = _userDocRef;
     if (ref != null) {
       try {
-        final today = dateKey(DateTime.now());
+        final today = LessonRepository.dateKey(DateTime.now());
         await ref.set({
           'totalXp': FieldValue.increment(xp),
           'dailyXpHistory.$today': FieldValue.increment(xp),

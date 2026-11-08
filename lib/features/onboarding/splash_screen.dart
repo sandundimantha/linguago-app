@@ -69,7 +69,7 @@ class _SplashScreenState extends State<SplashScreen>
                 const SizedBox(height: 24),
                 Text(
                   'LinguaGo',
-                  style: AppTextStyles.displayLarge.copyWith(
+                  style: Theme.of(context).textTheme.headlineLarge?.copyWith(
                     color: Colors.white,
                     fontWeight: FontWeight.w800,
                     fontSize: 40,
@@ -78,7 +78,7 @@ class _SplashScreenState extends State<SplashScreen>
                 const SizedBox(height: 8),
                 Text(
                   'Learn English. Level Up.',
-                  style: AppTextStyles.bodyMedium.copyWith(
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                     color: Colors.white.withValues(alpha: 0.80),
                     letterSpacing: 0.5,
                   ),

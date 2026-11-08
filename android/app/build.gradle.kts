@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.linguago.linguago"
-    compileSdk = flutter.compileSdkVersion
+    compileSdk = 37
     ndkVersion = flutter.ndkVersion
 
     compileOptions {

@@ -4,6 +4,9 @@ import 'package:go_router/go_router.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/utils/tts_service.dart';
+import '../../core/widgets/empty_state_widget.dart';
+import '../../core/widgets/loading_skeleton.dart';
+import '../../core/widgets/app_error_screen.dart';
 import '../../app/providers.dart';
 
 class DictionarySearchScreen extends ConsumerStatefulWidget {
@@ -89,9 +92,19 @@ class _DictionarySearchScreenState
 
             Expanded(
               child: vocabAsync.when(
-                loading: () =>
-                    const Center(child: CircularProgressIndicator()),
-                error: (e, _) => Center(child: Text('Error: $e')),
+                loading: () => ListView.separated(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: AppSpacing.screenMargin,
+                    vertical: 8,
+                  ),
+                  itemCount: 5,
+                  separatorBuilder: (_, __) => const SizedBox(height: 12),
+                  itemBuilder: (_, __) => const CardLoadingSkeleton(height: 80),
+                ),
+                error: (e, _) => AppErrorScreen(
+                  message: 'Failed to load dictionary: $e',
+                  onRetry: () => ref.refresh(vocabListProvider),
+                ),
                 data: (words) {
                   final results = words.where((w) {
                     if (_query.isEmpty) return true;
@@ -104,21 +117,16 @@ class _DictionarySearchScreenState
                   }).toList();
 
                   if (results.isEmpty) {
-                    return Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(Icons.search_off_rounded,
-                              size: 48, color: colors.mutedText),
-                          const SizedBox(height: 12),
-                          Text(
-                            'No definitions found for "$_query"',
-                            style: textTheme.bodyMedium?.copyWith(
-                              color: colors.mutedText,
-                            ),
-                          ),
-                        ],
-                      ),
+                    return EmptyStateWidget(
+                      icon: Icons.search_off_rounded,
+                      title: 'No Words Found',
+                      message:
+                          'We could not find any definitions matching "$_query". Check the spelling or try searching another word.',
+                      actionLabel: 'Clear Search',
+                      onAction: () {
+                        _searchCtrl.clear();
+                        setState(() => _query = '');
+                      },
                     );
                   }
 

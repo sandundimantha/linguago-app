@@ -1,4 +1,4 @@
-import '../models/ai_chat_models.dart';
+import '../../data/models/ai_chat_models.dart';
 
 abstract class AiTutorService {
   /// Send user message in the context of a scenario and previous conversation
@@ -8,3 +8,4 @@ abstract class AiTutorService {
     required String userText,
   });
 }
+
