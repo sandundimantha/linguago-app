@@ -17,6 +17,8 @@ class ChoiceCard extends StatelessWidget {
   final VoidCallback? onTap;
   final String? optionIndex; // e.g., "A", "B", "1", "2"
   final Widget? trailing;
+  final Widget? leading;   // optional leading widget (emoji, icon, etc.)
+  final String? subtitle;  // optional secondary label beneath [text]
 
   const ChoiceCard({
     super.key,
@@ -25,6 +27,8 @@ class ChoiceCard extends StatelessWidget {
     this.onTap,
     this.optionIndex,
     this.trailing,
+    this.leading,
+    this.subtitle,
   });
 
   @override
@@ -110,6 +114,10 @@ class ChoiceCard extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: AppSpacing.md, vertical: 14.0),
             child: Row(
               children: [
+                if (leading != null) ...[
+                  leading!,
+                  AppSpacing.hGapMd,
+                ],
                 if (optionIndex != null) ...[
                   Container(
                     width: 32,
@@ -130,13 +138,37 @@ class ChoiceCard extends StatelessWidget {
                   AppSpacing.hGapMd,
                 ],
                 Expanded(
-                  child: Text(
-                    text,
-                    style: textTheme.bodyLarge?.copyWith(
-                      color: textColor,
-                      fontWeight: state == ChoiceCardState.selected ? FontWeight.w700 : FontWeight.w600,
-                    ),
-                  ),
+                  child: subtitle != null
+                      ? Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              text,
+                              style: textTheme.bodyLarge?.copyWith(
+                                color: textColor,
+                                fontWeight: state == ChoiceCardState.selected
+                                    ? FontWeight.w700
+                                    : FontWeight.w600,
+                              ),
+                            ),
+                            const SizedBox(height: 2),
+                            Text(
+                              subtitle!,
+                              style: textTheme.bodySmall?.copyWith(
+                                color: textColor.withValues(alpha: 0.7),
+                              ),
+                            ),
+                          ],
+                        )
+                      : Text(
+                          text,
+                          style: textTheme.bodyLarge?.copyWith(
+                            color: textColor,
+                            fontWeight: state == ChoiceCardState.selected
+                                ? FontWeight.w700
+                                : FontWeight.w600,
+                          ),
+                        ),
                 ),
                 if (stateIcon != null) ...[
                   AppSpacing.hGapSm,
