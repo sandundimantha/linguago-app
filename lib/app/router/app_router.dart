@@ -4,6 +4,9 @@ import 'package:go_router/go_router.dart';
 import '../../features/auth/forgot_password_screen.dart';
 import '../../features/auth/log_in_screen.dart';
 import '../../features/auth/sign_up_screen.dart';
+import '../../features/grammar/grammar_exercise_screen.dart';
+import '../../features/grammar/grammar_hub_screen.dart';
+import '../../features/grammar/rule_card_screen.dart';
 import '../../features/home/home_screen.dart';
 import '../../features/home/theme_preview_screen.dart';
 import '../../features/lesson/learning_path_screen.dart';
@@ -19,6 +22,11 @@ import '../../features/onboarding/welcome_slides_screen.dart';
 import '../../features/practice/practice_screen.dart';
 import '../../features/profile/profile_screen.dart';
 import '../../features/progress/progress_screen.dart';
+import '../../features/vocabulary/flashcards_screen.dart';
+import '../../features/vocabulary/review_session_screen.dart';
+import '../../features/vocabulary/vocab_hub_screen.dart';
+import '../../features/vocabulary/word_detail_screen.dart';
+import '../../features/vocabulary/word_list_screen.dart';
 import '../providers.dart';
 import '../scaffold_with_nav_bar.dart';
 
@@ -120,6 +128,59 @@ GoRouter buildAppRouter(WidgetRef ref) {
         path: '/learning-path',
         parentNavigatorKey: rootNavigatorKey,
         builder: (context, state) => const LearningPathScreen(),
+      ),
+
+      // ── Vocabulary Subsystem Routes ─────────────────────────────────
+      GoRoute(
+        path: '/vocab',
+        parentNavigatorKey: rootNavigatorKey,
+        builder: (context, state) => const VocabHubScreen(),
+      ),
+      GoRoute(
+        path: '/vocab/list',
+        parentNavigatorKey: rootNavigatorKey,
+        builder: (context, state) => const WordListScreen(),
+      ),
+      GoRoute(
+        path: '/vocab/word/:id',
+        parentNavigatorKey: rootNavigatorKey,
+        builder: (context, state) {
+          final wordId = state.pathParameters['id'] ?? 'v1';
+          return WordDetailScreen(wordId: wordId);
+        },
+      ),
+      GoRoute(
+        path: '/vocab/flashcards',
+        parentNavigatorKey: rootNavigatorKey,
+        builder: (context, state) => const FlashcardsScreen(),
+      ),
+      GoRoute(
+        path: '/vocab/review',
+        parentNavigatorKey: rootNavigatorKey,
+        builder: (context, state) => const ReviewSessionScreen(),
+      ),
+
+      // ── Grammar Subsystem Routes ────────────────────────────────────
+      GoRoute(
+        path: '/grammar',
+        parentNavigatorKey: rootNavigatorKey,
+        builder: (context, state) => const GrammarHubScreen(),
+      ),
+      GoRoute(
+        path: '/grammar/topic/:id',
+        parentNavigatorKey: rootNavigatorKey,
+        builder: (context, state) {
+          final topicId = state.pathParameters['id'] ?? 'g1';
+          return RuleCardScreen(topicId: topicId);
+        },
+      ),
+      GoRoute(
+        path: '/grammar/exercise/:id',
+        parentNavigatorKey: rootNavigatorKey,
+        builder: (context, state) {
+          final topicId = state.pathParameters['id'] ?? 'g1';
+          return GrammarExerciseScreen(topicId: topicId);
+        },
       ),
 
       // ── Main shell (4-tab bottom nav) ───────────────────────────────

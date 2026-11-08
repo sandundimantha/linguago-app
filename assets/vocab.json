@@ -1,0 +1,223 @@
+[
+  {
+    "id": "v1",
+    "word": "Serendipity",
+    "phonetic": "/ˌser.ənˈdɪp.ə.ti/",
+    "partOfSpeech": "noun",
+    "definition": "The occurrence and development of events by chance in a happy or beneficial way.",
+    "example": "Finding my dream apartment while taking an unfamiliar street was pure serendipity.",
+    "synonyms": ["chance", "happy accident", "fluke", "fortune"],
+    "category": "Daily Life",
+    "level": "Advanced"
+  },
+  {
+    "id": "v2",
+    "word": "Eloquent",
+    "phonetic": "/ˈel.ə.kwənt/",
+    "partOfSpeech": "adjective",
+    "definition": "Fluent or persuasive in speaking or writing.",
+    "example": "She delivered an eloquent speech that moved the entire audience.",
+    "synonyms": ["articulate", "persuasive", "fluent", "expressive"],
+    "category": "Communication",
+    "level": "Intermediate"
+  },
+  {
+    "id": "v3",
+    "word": "Resilient",
+    "phonetic": "/rɪˈzɪl.jənt/",
+    "partOfSpeech": "adjective",
+    "definition": "Able to withstand or recover quickly from difficult conditions.",
+    "example": "Children can often be remarkably resilient in stressful circumstances.",
+    "synonyms": ["tough", "durable", "adaptable", "hardy"],
+    "category": "Mindset",
+    "level": "Intermediate"
+  },
+  {
+    "id": "v4",
+    "word": "Pragmatic",
+    "phonetic": "/præɡˈmæt.ɪk/",
+    "partOfSpeech": "adjective",
+    "definition": "Dealing with things sensibly and realistically in a practical way.",
+    "example": "We decided to take a pragmatic approach to cutting unnecessary expenses.",
+    "synonyms": ["practical", "sensible", "down-to-earth", "realistic"],
+    "category": "Business",
+    "level": "Advanced"
+  },
+  {
+    "id": "v5",
+    "word": "Ambiguous",
+    "phonetic": "/æmˈbɪɡ.ju.əs/",
+    "partOfSpeech": "adjective",
+    "definition": "Open to more than one interpretation; having a double meaning.",
+    "example": "The final contract clause was somewhat ambiguous and required legal clarification.",
+    "synonyms": ["equivocal", "vague", "unclear", "obscure"],
+    "category": "Academic",
+    "level": "Advanced"
+  },
+  {
+    "id": "v6",
+    "word": "Meticulous",
+    "phonetic": "/məˈtɪk.jə.ləs/",
+    "partOfSpeech": "adjective",
+    "definition": "Showing great attention to detail; very careful and precise.",
+    "example": "The architect gave meticulous instructions on every structural measurement.",
+    "synonyms": ["diligent", "thorough", "fastidious", "scrupulous"],
+    "category": "Workplace",
+    "level": "Advanced"
+  },
+  {
+    "id": "v7",
+    "word": "Empathy",
+    "phonetic": "/ˈem.pə.θi/",
+    "partOfSpeech": "noun",
+    "definition": "The ability to understand and share the feelings of another.",
+    "example": "Great leaders demonstrate strong empathy towards their team members.",
+    "synonyms": ["compassion", "understanding", "sensitivity", "fellow feeling"],
+    "category": "Communication",
+    "level": "Beginner"
+  },
+  {
+    "id": "v8",
+    "word": "Collaborate",
+    "phonetic": "/kəˈlæb.ə.reɪt/",
+    "partOfSpeech": "verb",
+    "definition": "Work jointly on an activity or project to produce something.",
+    "example": "Designers and engineers collaborate closely during product sprints.",
+    "synonyms": ["cooperate", "team up", "work together", "partner"],
+    "category": "Business",
+    "level": "Beginner"
+  },
+  {
+    "id": "v9",
+    "word": "Ubiquitous",
+    "phonetic": "/juːˈbɪk.wɪ.təs/",
+    "partOfSpeech": "adjective",
+    "definition": "Present, appearing, or found everywhere.",
+    "example": "Smartphones have become ubiquitous in modern metropolitan life.",
+    "synonyms": ["omnipresent", "everywhere", "pervasive", "universal"],
+    "category": "Academic",
+    "level": "Advanced"
+  },
+  {
+    "id": "v10",
+    "word": "Persuade",
+    "phonetic": "/pəˈsweɪd/",
+    "partOfSpeech": "verb",
+    "definition": "Induce someone to do something through reasoning or argument.",
+    "example": "She managed to persuade the investors with a solid presentation.",
+    "synonyms": ["convince", "influence", "sway", "prompt"],
+    "category": "Communication",
+    "level": "Beginner"
+  },
+  {
+    "id": "v11",
+    "word": "Inevitable",
+    "phonetic": "/ɪnˈev.ɪ.tə.bəl/",
+    "partOfSpeech": "adjective",
+    "definition": "Certain to happen; unavoidable.",
+    "example": "With the rise of internet banking, cashless stores became inevitable.",
+    "synonyms": ["unavoidable", "inescapable", "certain", "sure"],
+    "category": "Daily Life",
+    "level": "Intermediate"
+  },
+  {
+    "id": "v12",
+    "word": "Candor",
+    "phonetic": "/ˈkæn.dər/",
+    "partOfSpeech": "noun",
+    "definition": "The quality of being open, sincere, and honest in expression.",
+    "example": "I appreciated his candor when reviewing my initial design draft.",
+    "synonyms": ["frankness", "honesty", "openness", "sincerity"],
+    "category": "Workplace",
+    "level": "Advanced"
+  },
+  {
+    "id": "v13",
+    "word": "Lucid",
+    "phonetic": "/ˈluː.sɪd/",
+    "partOfSpeech": "adjective",
+    "definition": "Expressed clearly; easy to understand.",
+    "example": "The professor gave a remarkably lucid explanation of quantum physics.",
+    "synonyms": ["clear", "comprehensible", "intelligible", "coherent"],
+    "category": "Academic",
+    "level": "Intermediate"
+  },
+  {
+    "id": "v14",
+    "word": "Nostalgia",
+    "phonetic": "/nɒsˈtæl.dʒə/",
+    "partOfSpeech": "noun",
+    "definition": "A sentimental longing or wistful affection for a period in the past.",
+    "example": "Hearing that nostalgic music brought back memories of childhood summers.",
+    "synonyms": ["reminiscence", "wistfulness", "homesickness", "longing"],
+    "category": "Daily Life",
+    "level": "Intermediate"
+  },
+  {
+    "id": "v15",
+    "word": "Diligent",
+    "phonetic": "/ˈdɪl.ɪ.dʒənt/",
+    "partOfSpeech": "adjective",
+    "definition": "Having or showing care and conscientiousness in one's work or duties.",
+    "example": "Through diligent study every evening, he mastered English in one year.",
+    "synonyms": ["hardworking", "industrious", "attentive", "careful"],
+    "category": "Workplace",
+    "level": "Beginner"
+  },
+  {
+    "id": "v16",
+    "word": "Versatile",
+    "phonetic": "/ˈvɜː.sə.taɪl/",
+    "partOfSpeech": "adjective",
+    "definition": "Able to adapt or be adapted to many different functions or activities.",
+    "example": "He is a versatile programmer capable of building both mobile and cloud apps.",
+    "synonyms": ["adaptable", "flexible", "all-around", "resourceful"],
+    "category": "Workplace",
+    "level": "Intermediate"
+  },
+  {
+    "id": "v17",
+    "word": "Ephemeral",
+    "phonetic": "/ɪˈfem.ər.əl/",
+    "partOfSpeech": "adjective",
+    "definition": "Lasting for a very short time; fleeting.",
+    "example": "The ephemeral beauty of cherry blossoms draws millions of tourists.",
+    "synonyms": ["transient", "fleeting", "short-lived", "momentary"],
+    "category": "Academic",
+    "level": "Advanced"
+  },
+  {
+    "id": "v18",
+    "word": "Cognizant",
+    "phonetic": "/ˈkɒɡ.nɪ.zənt/",
+    "partOfSpeech": "adjective",
+    "definition": "Having knowledge or awareness of something.",
+    "example": "We must remain cognizant of cultural differences when traveling abroad.",
+    "synonyms": ["aware", "conscious", "mindful", "informed"],
+    "category": "Communication",
+    "level": "Advanced"
+  },
+  {
+    "id": "v19",
+    "word": "Authentic",
+    "phonetic": "/ɔːˈθen.tɪk/",
+    "partOfSpeech": "adjective",
+    "definition": "Of undisputed origin and not a copy; genuine.",
+    "example": "This small local bistro serves authentic Italian pasta dishes.",
+    "synonyms": ["genuine", "real", "legitimate", "bona fide"],
+    "category": "Daily Life",
+    "level": "Beginner"
+  },
+  {
+    "id": "v20",
+    "word": "Tenacious",
+    "phonetic": "/təˈneɪ.ʃəs/",
+    "partOfSpeech": "adjective",
+    "definition": "Tending to keep a firm hold of something; clinging or persisting.",
+    "example": "Her tenacious spirit ensured she never gave up despite setbacks.",
+    "synonyms": ["persevering", "determined", "persistent", "resolute"],
+    "category": "Mindset",
+    "level": "Advanced"
+  }
+]
+

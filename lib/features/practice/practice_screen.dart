@@ -111,6 +111,32 @@ class PracticeScreen extends StatelessWidget {
 
               AppSpacing.vGapMd,
 
+              // Vocabulary Hub Shortcut
+              _PracticeDrillCard(
+                icon: '📚',
+                title: 'Vocabulary Hub',
+                subtitle: 'Spaced repetition Leitner flashcards & 20 word bank',
+                color: colors.primary,
+                colors: colors,
+                textTheme: textTheme,
+                onTap: () => context.push('/vocab'),
+              ),
+
+              AppSpacing.vGapSm,
+
+              // Grammar Lab Shortcut
+              _PracticeDrillCard(
+                icon: '⚖️',
+                title: 'Grammar Lab',
+                subtitle: 'Rules, clear formulas, pitfalls & interactive drills',
+                color: colors.accent,
+                colors: colors,
+                textTheme: textTheme,
+                onTap: () => context.push('/grammar'),
+              ),
+
+              AppSpacing.vGapSm,
+
               _PracticeDrillCard(
                 icon: '🗣️',
                 title: 'Speaking Lab',
@@ -127,22 +153,10 @@ class PracticeScreen extends StatelessWidget {
                 icon: '🎧',
                 title: 'Listening Sprint',
                 subtitle: 'Train ear comprehension with native dialogues',
-                color: colors.accent,
+                color: const Color(0xFF8B5CF6),
                 colors: colors,
                 textTheme: textTheme,
                 onTap: () => context.push('/lesson/2'),
-              ),
-
-              AppSpacing.vGapSm,
-
-              _PracticeDrillCard(
-                icon: '📚',
-                title: 'Grammar Drills',
-                subtitle: 'Sentence building and fill-in-the-blank patterns',
-                color: colors.primary,
-                colors: colors,
-                textTheme: textTheme,
-                onTap: () => context.push('/lesson/3'),
               ),
             ],
           ),

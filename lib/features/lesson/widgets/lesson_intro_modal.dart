@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import '../../core/theme/app_colors.dart';
-import '../../core/theme/app_spacing.dart';
-import '../../core/widgets/primary_button.dart';
-import '../../data/models/lesson_models.dart';
+import '../../../core/theme/app_colors.dart';
+import '../../../core/theme/app_spacing.dart';
+import '../../../core/widgets/primary_button.dart';
+import '../../../data/models/lesson_models.dart';
 
 /// Modal bottom sheet or screen showing an intro to the lesson before starting.
 class LessonIntroModal extends StatelessWidget {

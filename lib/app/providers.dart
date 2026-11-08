@@ -6,6 +6,9 @@ import '../data/repositories/auth_repository.dart';
 import '../data/repositories/fake_auth_repository.dart';
 import '../data/repositories/preferences_repository.dart';
 import '../data/repositories/lesson_repository.dart';
+import '../data/repositories/spaced_repetition_scheduler.dart';
+import '../data/repositories/vocab_grammar_repository.dart';
+import '../data/models/vocab_grammar_models.dart';
 import '../features/lesson/controllers/lesson_controller.dart';
 
 // ── Repositories ─────────────────────────────────────────────────────────────
@@ -26,6 +29,35 @@ final lessonRepositoryProvider = Provider<LessonRepository>((ref) {
     throw Exception('PreferencesRepository not ready yet');
   }
   return LessonRepository(repo.prefs);
+});
+
+final srsSchedulerProvider = Provider<SpacedRepetitionScheduler>((ref) {
+  final prefsAsync = ref.watch(preferencesRepositoryProvider);
+  final repo = prefsAsync.valueOrNull;
+  if (repo == null) {
+    throw Exception('PreferencesRepository not ready yet');
+  }
+  return SpacedRepetitionScheduler(repo.prefs);
+});
+
+final vocabGrammarRepoProvider = Provider<VocabGrammarRepository>((ref) {
+  final srs = ref.watch(srsSchedulerProvider);
+  return VocabGrammarRepository(srs);
+});
+
+final vocabListProvider = FutureProvider<List<VocabWord>>((ref) async {
+  final repo = ref.watch(vocabGrammarRepoProvider);
+  return repo.loadVocab();
+});
+
+final grammarTopicsProvider = FutureProvider<List<GrammarTopic>>((ref) async {
+  final repo = ref.watch(vocabGrammarRepoProvider);
+  return repo.loadGrammar();
+});
+
+final dueWordsProvider = FutureProvider<List<VocabWord>>((ref) async {
+  final repo = ref.watch(vocabGrammarRepoProvider);
+  return repo.getDueWords();
 });
 
 final unitsProvider = FutureProvider<List<UnitModel>>((ref) async {

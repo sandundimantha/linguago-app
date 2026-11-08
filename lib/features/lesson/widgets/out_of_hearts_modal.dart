@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../core/theme/app_colors.dart';
-import '../../core/theme/app_spacing.dart';
-import '../../core/widgets/primary_button.dart';
+import '../../../core/theme/app_colors.dart';
+import '../../../core/theme/app_spacing.dart';
+import '../../../core/widgets/primary_button.dart';
 
 /// Modal dialog presented when user runs out of hearts during a lesson.
 class OutOfHeartsModal extends StatelessWidget {

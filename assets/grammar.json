@@ -1,0 +1,189 @@
+[
+  {
+    "id": "g1",
+    "title": "Present Perfect vs. Past Simple",
+    "level": "Intermediate",
+    "description": "Distinguish between finished past actions and actions connected to the present.",
+    "formula": "Have/Has + Past Participle (V3) vs. Verb-ed (V2)",
+    "rules": [
+      {
+        "title": "Past Simple: Definite Finished Time",
+        "explanation": "Use Past Simple when an action happened at a specific, finished time in the past (yesterday, last year, in 2020, 2 days ago).",
+        "exampleCorrect": "I visited London last summer.",
+        "exampleIncorrect": "I have visited London last summer."
+      },
+      {
+        "title": "Present Perfect: Life Experience & Unfinished Time",
+        "explanation": "Use Present Perfect when the time is not mentioned, or the period is still ongoing (today, this week, ever, never, already, yet).",
+        "exampleCorrect": "I have visited London three times in my life.",
+        "exampleIncorrect": "I visited London three times in my life (when talking about life experience)."
+      }
+    ],
+    "exercises": [
+      {
+        "prompt": "Choose the correct verb form: \"She ___ her keys yesterday evening.\"",
+        "options": ["lost", "has lost", "have lost", "is losing"],
+        "correctIndex": 0,
+        "explanation": "\"Yesterday evening\" specifies a finished time, demanding Past Simple (\"lost\")."
+      },
+      {
+        "prompt": "Choose the correct sentence:",
+        "options": [
+          "Have you ever seen a shooting star?",
+          "Did you ever saw a shooting star in your life?",
+          "Have you ever saw a shooting star?",
+          "Are you ever seeing a shooting star?"
+        ],
+        "correctIndex": 0,
+        "explanation": "\"Have you ever + past participle\" asks about lifetime experiences."
+      }
+    ]
+  },
+  {
+    "id": "g2",
+    "title": "Conditionals (Zero, First & Second)",
+    "level": "Intermediate",
+    "description": "Form logical if-statements ranging from scientific facts to real and imaginary possibilities.",
+    "formula": "If + Present, Future (1st) | If + Past, Would + Verb (2nd)",
+    "rules": [
+      {
+        "title": "Zero Conditional (General Truths)",
+        "explanation": "If + present simple, present simple. Used for universal scientific facts and invariable routines.",
+        "exampleCorrect": "If you heat ice, it melts.",
+        "exampleIncorrect": "If you will heat ice, it will melt."
+      },
+      {
+        "title": "First Conditional (Real Future Possibility)",
+        "explanation": "If + present simple, will + base verb. Used for likely future consequences.",
+        "exampleCorrect": "If it rains tomorrow, we will stay home.",
+        "exampleIncorrect": "If it will rain tomorrow, we will stay home."
+      },
+      {
+        "title": "Second Conditional (Hypothetical / Imaginary)",
+        "explanation": "If + past simple, would + base verb. Used for unreal present/future dreams.",
+        "exampleCorrect": "If I won a million dollars, I would travel the world.",
+        "exampleIncorrect": "If I will win a million dollars, I will travel."
+      }
+    ],
+    "exercises": [
+      {
+        "prompt": "\"If I ___ you, I would take that prestigious job offer.\"",
+        "options": ["were", "am", "will be", "would be"],
+        "correctIndex": 0,
+        "explanation": "In hypothetical Second Conditional advice, \"If I were you\" is the standard subjunctive form."
+      },
+      {
+        "prompt": "\"If she studies diligently, she ___ all her exams next month.\"",
+        "options": ["will pass", "would pass", "passed", "passes"],
+        "correctIndex": 0,
+        "explanation": "First conditional structure: If + present, will + infinitive."
+      }
+    ]
+  },
+  {
+    "id": "g3",
+    "title": "Modal Verbs of Deduction",
+    "level": "Advanced",
+    "description": "Express varying degrees of certainty about present and past events.",
+    "formula": "Must / Can't / Might / Could + Base Verb (Present) or + Have + V3 (Past)",
+    "rules": [
+      {
+        "title": "Certainty (Must vs. Can't)",
+        "explanation": "Use 'must' when 99% sure something is true. Use 'can't' (or 'couldn't') when 99% sure it is impossible. Never say 'must not' for impossibility.",
+        "exampleCorrect": "His lights are off; he must be sleeping.",
+        "exampleIncorrect": "His lights are on; he must not be home."
+      },
+      {
+        "title": "Possibility (Might / May / Could)",
+        "explanation": "Use 'might', 'may', or 'could' when something is possible but not certain (around 50% chance).",
+        "exampleCorrect": "Take an umbrella; it might rain later.",
+        "exampleIncorrect": "Take an umbrella; it can rain later."
+      }
+    ],
+    "exercises": [
+      {
+        "prompt": "\"Sarah just ran a 42km marathon. She ___ be exhausted!\"",
+        "options": ["must", "can't", "shouldn't", "won't"],
+        "correctIndex": 0,
+        "explanation": "\"Must\" denotes high logical certainty based on strong evidence."
+      },
+      {
+        "prompt": "\"Look at that old passport photo. That ___ be John; he looks completely different!\"",
+        "options": ["can't", "must", "might not to", "isn't to"],
+        "correctIndex": 0,
+        "explanation": "\"Can't\" expresses disbelief or impossibility."
+      }
+    ]
+  },
+  {
+    "id": "g4",
+    "title": "Passive Voice Construction",
+    "level": "Intermediate",
+    "description": "Shift focus to the recipient or result of the action rather than the actor.",
+    "formula": "Subject + [Be in right tense] + Past Participle (V3) + (by agent)",
+    "rules": [
+      {
+        "title": "When to Use Passive",
+        "explanation": "Use passive when the actor is unknown, obvious, or less important than the object affected.",
+        "exampleCorrect": "The Sydney Opera House was built in 1973.",
+        "exampleIncorrect": "Workers built the Sydney Opera House in 1973 (when focus is on the building)."
+      },
+      {
+        "title": "Tense Alignment",
+        "explanation": "The auxiliary verb 'be' carries the tense (is, was, has been, will be), followed by the V3 participle.",
+        "exampleCorrect": "The new bridge will be opened next Monday.",
+        "exampleIncorrect": "The new bridge will open by council next Monday."
+      }
+    ],
+    "exercises": [
+      {
+        "prompt": "\"Penicillin ___ by Alexander Fleming in 1928.\"",
+        "options": ["was discovered", "discovered", "is discovered", "has been discovered"],
+        "correctIndex": 0,
+        "explanation": "Past simple passive requires \"was/were + V3\"."
+      },
+      {
+        "prompt": "\"Millions of emails ___ around the world every single minute.\"",
+        "options": ["are sent", "is sent", "send", "have sending"],
+        "correctIndex": 0,
+        "explanation": "Present simple passive for habitual plural facts requires \"are + sent\"."
+      }
+    ]
+  },
+  {
+    "id": "g5",
+    "title": "Articles: A, An & The",
+    "level": "Beginner",
+    "description": "Master specific vs. general noun determination in English speech.",
+    "formula": "Indefinite (A/An) for non-specific, Definite (The) for specific or unique",
+    "rules": [
+      {
+        "title": "Sound, Not Letter",
+        "explanation": "Use 'an' before vowel sounds, not just vowel letters. E.g. 'an hour' (silent h), 'a university' (starts with /j/ consonant sound).",
+        "exampleCorrect": "It took an hour to finish the test.",
+        "exampleIncorrect": "It took a hour to finish the test."
+      },
+      {
+        "title": "Unique Objects & Second Mentions",
+        "explanation": "Use 'the' for items that are unique (the sun, the internet) or have already been introduced previously in the discourse.",
+        "exampleCorrect": "I bought a coffee and a croissant. The coffee was delicious.",
+        "exampleIncorrect": "I bought a coffee. A coffee was delicious."
+      }
+    ],
+    "exercises": [
+      {
+        "prompt": "\"He graduated with ___ degree in computer engineering.\"",
+        "options": ["a", "an", "the", "no article"],
+        "correctIndex": 0,
+        "explanation": "\"Degree\" begins with a consonant sound, so \"a degree\" is correct."
+      },
+      {
+        "prompt": "\"___ sun sets in the west every evening.\"",
+        "options": ["The", "A", "An", "No article"],
+        "correctIndex": 0,
+        "explanation": "\"The sun\" is unique in our world, necessitating the definite article."
+      }
+    ]
+  }
+]
+
