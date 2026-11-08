@@ -1,0 +1,589 @@
+{
+  "units": [
+    {
+      "id": "unit_1",
+      "unitNumber": 1,
+      "title": "Essential Greetings & Daily Life",
+      "description": "Master polite introductions, common phrases, and everyday conversational English.",
+      "color": "0xFF4F46E5",
+      "icon": "handshake",
+      "lessons": [
+        {
+          "id": "1",
+          "unitId": "unit_1",
+          "title": "First Introductions",
+          "subtitle": "Meeting people politely & introducing yourself",
+          "xpReward": 25,
+          "questions": [
+            {
+              "id": "u1_l1_q1",
+              "type": "multiple_choice",
+              "prompt": "Select the most polite way to introduce yourself to a new colleague:",
+              "options": [
+                "Give me your name.",
+                "Hello, nice to meet you! I am Alex.",
+                "Hey, who are you?",
+                "I am working here now."
+              ],
+              "correctIndex": 1,
+              "explanation": "\"Hello, nice to meet you!\" is warm, professional, and courteous."
+            },
+            {
+              "id": "u1_l1_q2",
+              "type": "fill_blank",
+              "prompt": "Complete the sentence with the correct greeting:",
+              "sentence": "Good ___, sir! Welcome to the Grand Central Hotel.",
+              "options": ["morning", "happy", "sky", "good"],
+              "correctAnswer": "morning",
+              "explanation": "\"Good morning\" is the conventional formal greeting used before noon."
+            },
+            {
+              "id": "u1_l1_q3",
+              "type": "sentence_builder",
+              "prompt": "Assemble the sentence in the correct natural order:",
+              "words": ["Nice", "to", "meet", "you", "Sarah"],
+              "correctSentence": "Nice to meet you Sarah",
+              "explanation": "Standard polite greeting structure: \"Nice to meet you [Name]\"."
+            },
+            {
+              "id": "u1_l1_q4",
+              "type": "match_pairs",
+              "prompt": "Match each English greeting with its appropriate response:",
+              "pairs": [
+                {"left": "How are you doing?", "right": "I'm doing well, thanks!"},
+                {"left": "Have a wonderful day!", "right": "You too!"},
+                {"left": "Nice to meet you.", "right": "Pleasure to meet you too."}
+              ],
+              "explanation": "These are customary conversational pairings in everyday English."
+            },
+            {
+              "id": "u1_l1_q5",
+              "type": "listening",
+              "prompt": "Listen carefully to the audio and select what you heard:",
+              "audioText": "Where are you from?",
+              "options": [
+                "Where are you from?",
+                "Where do you work?",
+                "When will you come?",
+                "Who are you with?"
+              ],
+              "correctIndex": 0,
+              "explanation": "\"Where are you from?\" inquires about nationality or origin."
+            },
+            {
+              "id": "u1_l1_q6",
+              "type": "speaking",
+              "prompt": "Read the greeting aloud clearly:",
+              "targetText": "I am pleased to meet you today.",
+              "phoneticHint": "eye am pleezd too meet yoo tuh-day",
+              "explanation": "Ensure clear pronunciation of \"pleased\" (/pliːzd/)."
+            },
+            {
+              "id": "u1_l1_q7",
+              "type": "multiple_choice",
+              "prompt": "Which response is most suitable when someone says \"Thank you very much\"?",
+              "options": [
+                "You're very welcome!",
+                "Yes, I did it.",
+                "Of course you do.",
+                "Never do that."
+              ],
+              "correctIndex": 0,
+              "explanation": "\"You're very welcome!\" is the standard courteous reply."
+            },
+            {
+              "id": "u1_l1_q8",
+              "type": "fill_blank",
+              "prompt": "Fill in the missing word:",
+              "sentence": "My ___ is David and I am an architect.",
+              "options": ["name", "home", "call", "age"],
+              "correctAnswer": "name",
+              "explanation": "\"My name is...\" is used to declare your identity."
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "unitId": "unit_1",
+          "title": "Ordering at a Café",
+          "subtitle": "Polite requests, drinks, & café etiquette",
+          "xpReward": 30,
+          "questions": [
+            {
+              "id": "u1_l2_q1",
+              "type": "multiple_choice",
+              "prompt": "What is the polite phrase to order a hot beverage?",
+              "options": [
+                "Give me coffee.",
+                "Could I have a cappuccino, please?",
+                "Coffee now.",
+                "I must have tea."
+              ],
+              "correctIndex": 1,
+              "explanation": "\"Could I have..., please?\" is the ideal polite customer request."
+            },
+            {
+              "id": "u1_l2_q2",
+              "type": "sentence_builder",
+              "prompt": "Arrange the words to ask for the bill:",
+              "words": ["Can", "we", "have", "the", "bill", "please"],
+              "correctSentence": "Can we have the bill please",
+              "explanation": "\"Can we have the bill, please?\" asks the waiter for the check."
+            },
+            {
+              "id": "u1_l2_q3",
+              "type": "fill_blank",
+              "prompt": "Complete the barista's question:",
+              "sentence": "Would you like that for ___ or to go?",
+              "options": ["here", "now", "sit", "drink"],
+              "correctAnswer": "here",
+              "explanation": "\"For here or to go?\" asks whether you will consume in the café or take away."
+            },
+            {
+              "id": "u1_l2_q4",
+              "type": "match_pairs",
+              "prompt": "Match the café term with its meaning:",
+              "pairs": [
+                {"left": "To go / Takeaway", "right": "Drink outside the café"},
+                {"left": "Receipt", "right": "Proof of payment"},
+                {"left": "Tip / Gratuity", "right": "Extra money for good service"}
+              ],
+              "explanation": "Key café and restaurant transaction vocabulary."
+            },
+            {
+              "id": "u1_l2_q5",
+              "type": "listening",
+              "prompt": "Listen to the customer's order:",
+              "audioText": "An iced latte with oat milk, please.",
+              "options": [
+                "An iced latte with oat milk, please.",
+                "A hot latte with almond milk, please.",
+                "An iced tea with lemon juice, please.",
+                "A green tea with honey, please."
+              ],
+              "correctIndex": 0,
+              "explanation": "Clear order specification with beverage type and milk preference."
+            },
+            {
+              "id": "u1_l2_q6",
+              "type": "speaking",
+              "prompt": "Speak this sentence into the microphone:",
+              "targetText": "Could I get a glass of water?",
+              "phoneticHint": "kood eye get uh glas ov wah-ter",
+              "explanation": "Use a gentle rising intonation for polite questions."
+            },
+            {
+              "id": "u1_l2_q7",
+              "type": "multiple_choice",
+              "prompt": "What does a barista mean by \"Any pastries with that?\"",
+              "options": [
+                "Do you want something sweet or baked to eat?",
+                "Do you have a loyalty card?",
+                "Is your cash ready?",
+                "Where would you like to sit?"
+              ],
+              "correctIndex": 0,
+              "explanation": "Pastries include croissants, muffins, scones, and danishes."
+            },
+            {
+              "id": "u1_l2_q8",
+              "type": "fill_blank",
+              "prompt": "Fill in the blank with the correct preposition:",
+              "sentence": "I take my coffee ___ sugar and a splash of milk.",
+              "options": ["with", "at", "by", "for"],
+              "correctAnswer": "with",
+              "explanation": "Use \"with\" to indicate ingredients added to food/drinks."
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "unitId": "unit_1",
+          "title": "Directions in Town",
+          "subtitle": "Navigating streets, landmarks, & transport",
+          "xpReward": 30,
+          "questions": [
+            {
+              "id": "u1_l3_q1",
+              "type": "multiple_choice",
+              "prompt": "How do you politely ask a stranger for directions?",
+              "options": [
+                "Excuse me, could you tell me where the library is?",
+                "Hey! Show me the library.",
+                "Where is library right now?",
+                "Take me to the station."
+              ],
+              "correctIndex": 0,
+              "explanation": "\"Excuse me, could you tell me...\" softens an unsolicited question to a stranger."
+            },
+            {
+              "id": "u1_l3_q2",
+              "type": "sentence_builder",
+              "prompt": "Build the direction phrase:",
+              "words": ["Turn", "left", "at", "the", "traffic", "lights"],
+              "correctSentence": "Turn left at the traffic lights",
+              "explanation": "Standard imperative instruction for vehicle or walking navigation."
+            },
+            {
+              "id": "u1_l3_q3",
+              "type": "fill_blank",
+              "prompt": "Choose the correct preposition of place:",
+              "sentence": "The bank is directly ___ the museum on Oxford Street.",
+              "options": ["opposite", "under", "inside", "during"],
+              "correctAnswer": "opposite",
+              "explanation": "\"Opposite\" means on the other side of the road facing it."
+            },
+            {
+              "id": "u1_l3_q4",
+              "type": "match_pairs",
+              "prompt": "Match each navigation phrase to its meaning:",
+              "pairs": [
+                {"left": "Go straight ahead", "right": "Continue in the same direction"},
+                {"left": "Cross the street", "right": "Walk to the other side"},
+                {"left": "At the corner", "right": "Where two streets meet"}
+              ],
+              "explanation": "Common directional spatial markers."
+            },
+            {
+              "id": "u1_l3_q5",
+              "type": "listening",
+              "prompt": "Listen carefully to the commuter's instruction:",
+              "audioText": "Take the subway two stops to Central Park.",
+              "options": [
+                "Take the subway two stops to Central Park.",
+                "Take the bus three stops to Central Station.",
+                "Walk two blocks toward Central Park.",
+                "Take the taxi directly to the park."
+              ],
+              "correctIndex": 0,
+              "explanation": "Listening for mode of transport and destination."
+            },
+            {
+              "id": "u1_l3_q6",
+              "type": "speaking",
+              "prompt": "Pronounce this sentence clearly:",
+              "targetText": "Is the train station within walking distance?",
+              "phoneticHint": "iz thuh trayn stay-shun with-in wahk-ing dis-tuns",
+              "explanation": "\"Walking distance\" refers to a short journey you can walk on foot."
+            },
+            {
+              "id": "u1_l3_q7",
+              "type": "multiple_choice",
+              "prompt": "If a landmark is \"two blocks away\", what does that mean?",
+              "options": [
+                "It is approximately two street intersections away.",
+                "It is closed for two weeks.",
+                "It has two large concrete blocks.",
+                "It is two hours by train."
+              ],
+              "correctIndex": 0,
+              "explanation": "A \"block\" is the distance along a street from one cross-street to the next."
+            },
+            {
+              "id": "u1_l3_q8",
+              "type": "fill_blank",
+              "prompt": "Fill in the blank with the appropriate word:",
+              "sentence": "You cannot miss it; it is right on your ___ hand side.",
+              "options": ["right", "look", "walking", "fast"],
+              "correctAnswer": "right",
+              "explanation": "\"On your right/left hand side\" is common directional parlance."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unit_2",
+      "unitNumber": 2,
+      "title": "Travel, Work & Everyday Life",
+      "description": "Expand into airport travel, workplace emails, and weekend leisure plans.",
+      "color": "0xFF059669",
+      "icon": "airplane",
+      "lessons": [
+        {
+          "id": "4",
+          "unitId": "unit_2",
+          "title": "At the Airport",
+          "subtitle": "Check-in, boarding passes, & flight security",
+          "xpReward": 35,
+          "questions": [
+            {
+              "id": "u2_l1_q1",
+              "type": "multiple_choice",
+              "prompt": "What document must you present when boarding an aircraft?",
+              "options": [
+                "Your boarding pass and passport",
+                "Your library card",
+                "Your restaurant receipt",
+                "A note from your doctor"
+              ],
+              "correctIndex": 0,
+              "explanation": "A boarding pass and valid passport are mandatory for boarding flights."
+            },
+            {
+              "id": "u2_l1_q2",
+              "type": "fill_blank",
+              "prompt": "Complete the airport security instruction:",
+              "sentence": "Please place all liquids into a clear ___ bag.",
+              "options": ["plastic", "heavy", "wooden", "leather"],
+              "correctAnswer": "plastic",
+              "explanation": "Airport security regulations stipulate transparent plastic bags for liquids."
+            },
+            {
+              "id": "u2_l1_q3",
+              "type": "sentence_builder",
+              "prompt": "Arrange into a flight attendant announcement:",
+              "words": ["Please", "fasten", "your", "seatbelts", "for", "takeoff"],
+              "correctSentence": "Please fasten your seatbelts for takeoff",
+              "explanation": "Crucial aviation safety instruction during taxi and takeoff."
+            },
+            {
+              "id": "u2_l1_q4",
+              "type": "match_pairs",
+              "prompt": "Match each airport terminal sign to its meaning:",
+              "pairs": [
+                {"left": "Baggage Claim", "right": "Where you collect your luggage"},
+                {"left": "Departures", "right": "Flights leaving the airport"},
+                {"left": "Gate", "right": "Door leading onto the airplane"}
+              ],
+              "explanation": "Essential terminal navigation vocabulary."
+            },
+            {
+              "id": "u2_l1_q5",
+              "type": "listening",
+              "prompt": "Listen to the gate agent's announcement:",
+              "audioText": "Flight 204 to London is now boarding at Gate 14.",
+              "options": [
+                "Flight 204 to London is now boarding at Gate 14.",
+                "Flight 204 to Paris is delayed until 4 PM.",
+                "Flight 402 to London is arriving at Gate 40.",
+                "Flight 214 to New York has changed gates."
+              ],
+              "correctIndex": 0,
+              "explanation": "Focus on the flight number (204) and gate number (14)."
+            },
+            {
+              "id": "u2_l1_q6",
+              "type": "speaking",
+              "prompt": "Read this check-in query clearly:",
+              "targetText": "I would prefer a window seat if possible.",
+              "phoneticHint": "eye wood pree-fer uh win-doh seet if pos-uh-bul",
+              "explanation": "Practice stating personal seating preferences politely."
+            },
+            {
+              "id": "u2_l1_q7",
+              "type": "multiple_choice",
+              "prompt": "What is the difference between \"carry-on\" and \"checked baggage\"?",
+              "options": [
+                "Carry-on stays with you in the cabin; checked goes in the cargo hold.",
+                "Carry-on is sent by mail; checked baggage is held by customs.",
+                "Both mean bags that weigh over 50 kilograms.",
+                "Carry-on is only for duty-free items."
+              ],
+              "correctIndex": 0,
+              "explanation": "Cabin luggage vs cargo luggage is a vital travel distinction."
+            },
+            {
+              "id": "u2_l1_q8",
+              "type": "fill_blank",
+              "prompt": "Fill in the blank with the correct travel verb:",
+              "sentence": "Our flight was ___ by two hours due to heavy fog.",
+              "options": ["delayed", "eaten", "painted", "forgotten"],
+              "correctAnswer": "delayed",
+              "explanation": "Flights are delayed when their departure is postponed."
+            }
+          ]
+        },
+        {
+          "id": "5",
+          "unitId": "unit_2",
+          "title": "Professional Emails",
+          "subtitle": "Workplace etiquette, meetings, & formal replies",
+          "xpReward": 40,
+          "questions": [
+            {
+              "id": "u2_l2_q1",
+              "type": "multiple_choice",
+              "prompt": "Choose the most professional opening for an email to a new client:",
+              "options": [
+                "Dear Mr. Anderson,",
+                "Yo Anderson!",
+                "Hey dude,",
+                "What's up?"
+              ],
+              "correctIndex": 0,
+              "explanation": "\"Dear Mr. [Last Name]\" is the standard formal greeting in business communication."
+            },
+            {
+              "id": "u2_l2_q2",
+              "type": "sentence_builder",
+              "prompt": "Form a polite sentence referencing an attachment:",
+              "words": ["Please", "find", "attached", "the", "quarterly", "report"],
+              "correctSentence": "Please find attached the quarterly report",
+              "explanation": "\"Please find attached...\" is the standard business formula for files sent."
+            },
+            {
+              "id": "u2_l2_q3",
+              "type": "fill_blank",
+              "prompt": "Complete the polite scheduling sentence:",
+              "sentence": "Please let me know if Tuesday at 10 AM is ___ for you.",
+              "options": ["convenient", "cloudy", "loud", "crowded"],
+              "correctAnswer": "convenient",
+              "explanation": "\"Convenient\" means suitable for someone's schedule or comfort."
+            },
+            {
+              "id": "u2_l2_q4",
+              "type": "match_pairs",
+              "prompt": "Match the email closing with its level of formality:",
+              "pairs": [
+                {"left": "Sincerely,", "right": "Very formal letter"},
+                {"left": "Best regards,", "right": "Professional & standard"},
+                {"left": "Cheers,", "right": "Casual colleague chat"}
+              ],
+              "explanation": "Selecting the right sign-off demonstrates cultural and situational awareness."
+            },
+            {
+              "id": "u2_l2_q5",
+              "type": "listening",
+              "prompt": "Listen to the executive's voicemail message:",
+              "audioText": "I look forward to discussing the project tomorrow.",
+              "options": [
+                "I look forward to discussing the project tomorrow.",
+                "I forgot about our project meeting yesterday.",
+                "I would like to cancel the contract immediately.",
+                "Let us delay the project until next quarter."
+              ],
+              "correctIndex": 0,
+              "explanation": "\"Look forward to + gerund\" indicates eager anticipation."
+            },
+            {
+              "id": "u2_l2_q6",
+              "type": "speaking",
+              "prompt": "Practice saying this professional sentence aloud:",
+              "targetText": "Thank you for your prompt response to my email.",
+              "phoneticHint": "thank yoo for yoor prompt ree-spons too my ee-mayl",
+              "explanation": "\"Prompt\" in this context means swift, quick, and timely."
+            },
+            {
+              "id": "u2_l2_q7",
+              "type": "multiple_choice",
+              "prompt": "What does the abbreviation \"FYI\" in a work email mean?",
+              "options": [
+                "For Your Information",
+                "Follow Your Instincts",
+                "Find Your Invoice",
+                "Fix Your Issue"
+              ],
+              "correctIndex": 0,
+              "explanation": "FYI is a common workplace acronym meaning no immediate action is required."
+            },
+            {
+              "id": "u2_l2_q8",
+              "type": "fill_blank",
+              "prompt": "Fill in the blank with the correct preposition:",
+              "sentence": "I will get back to you ___ the end of the day.",
+              "options": ["by", "above", "through", "during"],
+              "correctAnswer": "by",
+              "explanation": "\"By the end of the day\" denotes a deadline before or at close of business."
+            }
+          ]
+        },
+        {
+          "id": "6",
+          "unitId": "unit_2",
+          "title": "Weekend Plans & Hobbies",
+          "subtitle": "Leisure activities, future tense, & socializing",
+          "xpReward": 35,
+          "questions": [
+            {
+              "id": "u2_l3_q1",
+              "type": "multiple_choice",
+              "prompt": "Select the correct sentence expressing a future plan:",
+              "options": [
+                "I am going to visit the modern art gallery on Saturday.",
+                "I visit yesterday modern art.",
+                "I will visiting the gallery last week.",
+                "Me go gallery Saturday morning."
+              ],
+              "correctIndex": 0,
+              "explanation": "\"be going to + verb\" is naturally used for planned future intentions."
+            },
+            {
+              "id": "u2_l3_q2",
+              "type": "sentence_builder",
+              "prompt": "Build an invitation for a friend:",
+              "words": ["Do", "you", "want", "to", "grab", "lunch", "together"],
+              "correctSentence": "Do you want to grab lunch together",
+              "explanation": "\"To grab lunch\" is an informal, friendly idiom for having a meal."
+            },
+            {
+              "id": "u2_l3_q3",
+              "type": "fill_blank",
+              "prompt": "Complete the hobby description:",
+              "sentence": "In my spare time, I really enjoy ___ photos of nature.",
+              "options": ["taking", "eating", "hearing", "jumping"],
+              "correctAnswer": "taking",
+              "explanation": "We say \"take photos\" or \"taking photographs\" in English."
+            },
+            {
+              "id": "u2_l3_q4",
+              "type": "match_pairs",
+              "prompt": "Match each leisure activity with its fitting collocated verb:",
+              "pairs": [
+                {"left": "Swimming / Running", "right": "Go (go swimming)"},
+                {"left": "Tennis / Football", "right": "Play (play tennis)"},
+                {"left": "Yoga / Karate", "right": "Do (do yoga)"}
+              ],
+              "explanation": "English verbs for sports: 'go' (-ing), 'play' (ball/team sports), 'do' (martial arts/activities)."
+            },
+            {
+              "id": "u2_l3_q5",
+              "type": "listening",
+              "prompt": "Listen to the weekend suggestion:",
+              "audioText": "How about going for a hike in the mountains?",
+              "options": [
+                "How about going for a hike in the mountains?",
+                "We must clean the house this weekend.",
+                "The mountains are too cold for camping.",
+                "Have you ever climbed Mount Everest?"
+              ],
+              "correctIndex": 0,
+              "explanation": "\"How about + verb-ing\" is a common structure for friendly suggestions."
+            },
+            {
+              "id": "u2_l3_q6",
+              "type": "speaking",
+              "prompt": "Say this conversational sentence out loud:",
+              "targetText": "That sounds like a wonderful idea!",
+              "phoneticHint": "that sowndz lyk uh wun-der-ful eye-dee-uh",
+              "explanation": "Express genuine enthusiasm when accepting invitations."
+            },
+            {
+              "id": "u2_l3_q7",
+              "type": "multiple_choice",
+              "prompt": "What does someone mean when they say \"I'll take a rain check\"?",
+              "options": [
+                "They decline now but want to reschedule for another time.",
+                "They are looking at the weather forecast.",
+                "They forgot their umbrella.",
+                "They want you to pay with cash."
+              ],
+              "correctIndex": 0,
+              "explanation": "\"Take a rain check\" politely declines an offer now with promise to accept later."
+            },
+            {
+              "id": "u2_l3_q8",
+              "type": "fill_blank",
+              "prompt": "Fill in the blank with the correct adverb:",
+              "sentence": "The concert was ___ sold out within minutes.",
+              "options": ["completely", "tasty", "slowly", "green"],
+              "correctAnswer": "completely",
+              "explanation": "\"Completely sold out\" indicates that all tickets were bought."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+

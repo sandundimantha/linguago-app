@@ -7,6 +7,8 @@ class PreferencesRepository {
 
   final SharedPreferences _prefs;
 
+  SharedPreferences get prefs => _prefs;
+
   PreferencesRepository(this._prefs);
 
   static Future<PreferencesRepository> create() async {

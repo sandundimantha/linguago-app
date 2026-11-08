@@ -6,6 +6,7 @@ import '../../features/auth/log_in_screen.dart';
 import '../../features/auth/sign_up_screen.dart';
 import '../../features/home/home_screen.dart';
 import '../../features/home/theme_preview_screen.dart';
+import '../../features/lesson/learning_path_screen.dart';
 import '../../features/lesson/lesson_screen.dart';
 import '../../features/onboarding/daily_goal_screen.dart';
 import '../../features/onboarding/learning_goal_screen.dart';
@@ -112,6 +113,13 @@ GoRouter buildAppRouter(WidgetRef ref) {
         path: '/auth/forgot-password',
         parentNavigatorKey: rootNavigatorKey,
         builder: (context, state) => const ForgotPasswordScreen(),
+      ),
+
+      // ── Learning Path route (full-screen, above shell) ──────────────
+      GoRoute(
+        path: '/learning-path',
+        parentNavigatorKey: rootNavigatorKey,
+        builder: (context, state) => const LearningPathScreen(),
       ),
 
       // ── Main shell (4-tab bottom nav) ───────────────────────────────

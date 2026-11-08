@@ -1,9 +1,12 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../data/models/user_model.dart';
 import '../data/models/user_preferences.dart';
+import '../data/models/lesson_models.dart';
 import '../data/repositories/auth_repository.dart';
 import '../data/repositories/fake_auth_repository.dart';
 import '../data/repositories/preferences_repository.dart';
+import '../data/repositories/lesson_repository.dart';
+import '../features/lesson/controllers/lesson_controller.dart';
 
 // ── Repositories ─────────────────────────────────────────────────────────────
 
@@ -16,14 +19,39 @@ final preferencesRepositoryProvider =
   return PreferencesRepository.create();
 });
 
-// ── Auth State ────────────────────────────────────────────────────────────────
+final lessonRepositoryProvider = Provider<LessonRepository>((ref) {
+  final prefsAsync = ref.watch(preferencesRepositoryProvider);
+  final repo = prefsAsync.valueOrNull;
+  if (repo == null) {
+    throw Exception('PreferencesRepository not ready yet');
+  }
+  return LessonRepository(repo.prefs);
+});
+
+final unitsProvider = FutureProvider<List<UnitModel>>((ref) async {
+  final repo = ref.watch(lessonRepositoryProvider);
+  return repo.loadUnits();
+});
+
+final completedLessonIdsProvider = Provider<Set<String>>((ref) {
+  final repo = ref.watch(lessonRepositoryProvider);
+  return repo.getCompletedLessonIds();
+});
+
+final lessonControllerProvider = StateNotifierProvider.autoDispose
+    .family<LessonController, LessonState, LessonModel>((ref, lesson) {
+  final repo = ref.watch(lessonRepositoryProvider);
+  return LessonController(repo, lesson);
+});
+
+// ── Auth State ───────────────────────────────────────────────────────────────
 
 final authStateProvider = StreamProvider<UserModel?>((ref) {
   final repo = ref.watch(authRepositoryProvider);
   return repo.authStateChanges;
 });
 
-// ── User Preferences ──────────────────────────────────────────────────────────
+// ── User Preferences ─────────────────────────────────────────────────────────
 
 class UserPreferencesNotifier extends StateNotifier<UserPreferences> {
   final PreferencesRepository _repo;
@@ -77,7 +105,7 @@ final userPreferencesProvider =
   return UserPreferencesNotifier(repo);
 });
 
-// ── First-launch Flag ─────────────────────────────────────────────────────────
+// ── First-launch Flag ────────────────────────────────────────────────────────
 
 final isFirstLaunchProvider = FutureProvider<bool>((ref) async {
   final repoAsync = ref.watch(preferencesRepositoryProvider);
@@ -85,7 +113,7 @@ final isFirstLaunchProvider = FutureProvider<bool>((ref) async {
   return repo.isFirstLaunch();
 });
 
-// ── Auth Actions ──────────────────────────────────────────────────────────────
+// ── Auth Actions ─────────────────────────────────────────────────────────────
 
 class AuthNotifier extends StateNotifier<AsyncValue<UserModel?>> {
   final AuthRepository _auth;
@@ -138,4 +166,3 @@ final authNotifierProvider =
   final repo = ref.watch(authRepositoryProvider);
   return AuthNotifier(repo);
 });
-
