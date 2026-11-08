@@ -87,6 +87,22 @@ class FakeAuthRepository implements AuthRepository {
   }
 
   @override
+  Future<UserModel> signInWithGoogle() async {
+    await Future.delayed(const Duration(milliseconds: 600));
+    final googleUser = UserModel(
+      id: 'google_user_demo',
+      name: 'Alex Google',
+      email: 'alex.google@example.com',
+      avatarUrl:
+          'https://lh3.googleusercontent.com/aida-public/AB6AXuB1raLnqEpiWWLClcQ-TJp1sN7vxaXSRlLPfLdQY3zQHGPDPML4Xb4ixiobcV80PQIecFjtVnAtjy8qWlwSUvxNXrbteETamMEirqosK5BCCAgJoGFuB61OSPO9R09OkxVNpOkj_usCCzLd5wj0bkaUJCOMCL6_cs9F4KmlYXNmfPH2SLsh2zyj9t3Xm4XUn3uvL0iZkc4yfhzBd8ZltpAwpTqeaWAtsv-HqEhhsYQG',
+      createdAt: DateTime.now(),
+    );
+    _currentUser = googleUser;
+    _controller.add(_currentUser);
+    return googleUser;
+  }
+
+  @override
   Future<void> sendPasswordResetEmail(String email) async {
     await Future.delayed(const Duration(milliseconds: 500));
     // Simulated success

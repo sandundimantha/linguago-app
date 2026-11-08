@@ -13,6 +13,9 @@ abstract class AuthRepository {
   /// Register a new account
   Future<UserModel> signUpWithEmailAndPassword(String name, String email, String password);
 
+  /// Sign in with Google credential
+  Future<UserModel> signInWithGoogle();
+
   /// Send password reset instructions
   Future<void> sendPasswordResetEmail(String email);
 

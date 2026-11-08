@@ -67,7 +67,7 @@ class LessonRepository {
     await _prefs.setInt(_userTotalXpKey, current + xp);
 
     // Record today's XP
-    final today = _dateKey(DateTime.now());
+    final today = dateKey(DateTime.now());
     final history = getDailyXpHistory();
     history[today] = (history[today] ?? 0) + xp;
     await _prefs.setString(_dailyXpHistoryKey, json.encode(history));
@@ -94,13 +94,13 @@ class LessonRepository {
       // Seed with last 7 days of realistic progress data
       final now = DateTime.now();
       return {
-        _dateKey(now.subtract(const Duration(days: 6))): 25,
-        _dateKey(now.subtract(const Duration(days: 5))): 40,
-        _dateKey(now.subtract(const Duration(days: 4))): 30,
-        _dateKey(now.subtract(const Duration(days: 3))): 55,
-        _dateKey(now.subtract(const Duration(days: 2))): 45,
-        _dateKey(now.subtract(const Duration(days: 1))): 50,
-        _dateKey(now): 60,
+        dateKey(now.subtract(const Duration(days: 6))): 25,
+        dateKey(now.subtract(const Duration(days: 5))): 40,
+        dateKey(now.subtract(const Duration(days: 4))): 30,
+        dateKey(now.subtract(const Duration(days: 3))): 55,
+        dateKey(now.subtract(const Duration(days: 2))): 45,
+        dateKey(now.subtract(const Duration(days: 1))): 50,
+        dateKey(now): 60,
       };
     }
     try {
@@ -115,12 +115,12 @@ class LessonRepository {
     final list = _prefs.getStringList(_streakDatesKey);
     if (list == null || list.isEmpty) {
       final now = DateTime.now();
-      return List.generate(7, (i) => _dateKey(now.subtract(Duration(days: i))));
+      return List.generate(7, (i) => dateKey(now.subtract(Duration(days: i))));
     }
     return list;
   }
 
-  static String _dateKey(DateTime dt) {
+  static String dateKey(DateTime dt) {
     return '${dt.year}-${dt.month.toString().padLeft(2, '0')}-${dt.day.toString().padLeft(2, '0')}';
   }
 }

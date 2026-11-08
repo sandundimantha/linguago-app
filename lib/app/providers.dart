@@ -6,8 +6,10 @@ import '../data/models/user_preferences.dart';
 import '../data/models/lesson_models.dart';
 import '../data/repositories/auth_repository.dart';
 import '../data/repositories/fake_auth_repository.dart';
+import '../data/repositories/firebase_auth_repository.dart';
 import '../data/repositories/preferences_repository.dart';
 import '../data/repositories/lesson_repository.dart';
+import '../data/repositories/firebase_lesson_repository.dart';
 import '../data/repositories/spaced_repetition_scheduler.dart';
 import '../data/repositories/vocab_grammar_repository.dart';
 import '../data/models/vocab_grammar_models.dart';
@@ -18,7 +20,20 @@ import '../features/lesson/controllers/lesson_controller.dart';
 
 // ── Repositories ─────────────────────────────────────────────────────────────
 
+/// Global flag to switch between Firebase and Fake/Local repositories if needed.
+/// Defaults to true so Firebase is active.
+final useFirebaseProvider = StateProvider<bool>((ref) => true);
+
 final authRepositoryProvider = Provider<AuthRepository>((ref) {
+  final useFirebase = ref.watch(useFirebaseProvider);
+  if (useFirebase) {
+    try {
+      return FirebaseAuthRepository();
+    } catch (_) {
+      // Graceful fallback to FakeAuthRepository if Firebase is uninitialized
+      return FakeAuthRepository();
+    }
+  }
   return FakeAuthRepository();
 });
 
@@ -33,6 +48,21 @@ final lessonRepositoryProvider = Provider<LessonRepository>((ref) {
   if (repo == null) {
     throw Exception('PreferencesRepository not ready yet');
   }
+
+  final useFirebase = ref.watch(useFirebaseProvider);
+  if (useFirebase) {
+    try {
+      final user = ref.watch(authStateProvider).valueOrNull;
+      final fbRepo = FirebaseLessonRepository(
+        repo.prefs,
+        userId: user?.id,
+      );
+      return fbRepo;
+    } catch (_) {
+      return LessonRepository(repo.prefs);
+    }
+  }
+
   return LessonRepository(repo.prefs);
 });
 
@@ -185,6 +215,18 @@ class AuthNotifier extends StateNotifier<AsyncValue<UserModel?>> {
     state = const AsyncValue.loading();
     try {
       final user = await _auth.signInWithEmailAndPassword(email, password);
+      state = AsyncValue.data(user);
+      return user;
+    } catch (e, st) {
+      state = AsyncValue.error(e, st);
+      return null;
+    }
+  }
+
+  Future<UserModel?> signInWithGoogle() async {
+    state = const AsyncValue.loading();
+    try {
+      final user = await _auth.signInWithGoogle();
       state = AsyncValue.data(user);
       return user;
     } catch (e, st) {

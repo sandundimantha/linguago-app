@@ -5,6 +5,7 @@ import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/widgets/primary_button.dart';
 import '../../app/providers.dart';
+import '../../data/repositories/firebase_lesson_repository.dart';
 
 /// Create Account screen with name, email, password, and confirm password fields.
 class SignUpScreen extends ConsumerStatefulWidget {
@@ -40,7 +41,25 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
           _passwordCtrl.text,
         );
     if (user != null && mounted) {
-      context.go('/');
+      final lessonRepo = ref.read(lessonRepositoryProvider);
+      if (lessonRepo is FirebaseLessonRepository) {
+        final prefs = ref.read(userPreferencesProvider);
+        await lessonRepo.saveUserProfile(user: user, preferences: prefs);
+      }
+      if (mounted) context.go('/');
+    }
+  }
+
+  Future<void> _signUpWithGoogle() async {
+    final user =
+        await ref.read(authNotifierProvider.notifier).signInWithGoogle();
+    if (user != null && mounted) {
+      final lessonRepo = ref.read(lessonRepositoryProvider);
+      if (lessonRepo is FirebaseLessonRepository) {
+        final prefs = ref.read(userPreferencesProvider);
+        await lessonRepo.saveUserProfile(user: user, preferences: prefs);
+      }
+      if (mounted) context.go('/');
     }
   }
 
@@ -195,6 +214,58 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                   label: 'Sign Up',
                   isLoading: isLoading,
                   onPressed: isLoading ? null : _submit,
+                ),
+                const SizedBox(height: 16),
+
+                // Or divider
+                Row(
+                  children: [
+                    Expanded(child: Divider(color: colors.border)),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16),
+                      child: Text(
+                        'OR',
+                        style: textTheme.labelSmall?.copyWith(
+                          color: colors.mutedText,
+                          letterSpacing: 1.2,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ),
+                    Expanded(child: Divider(color: colors.border)),
+                  ],
+                ),
+                const SizedBox(height: 16),
+
+                // Continue with Google button
+                OutlinedButton(
+                  onPressed: isLoading ? null : _signUpWithGoogle,
+                  style: OutlinedButton.styleFrom(
+                    minimumSize: const Size.fromHeight(52),
+                    backgroundColor: colors.card,
+                    side: BorderSide(color: colors.border, width: 1.5),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: AppSpacing.brButton,
+                    ),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Icon(
+                        Icons.g_mobiledata_rounded,
+                        size: 32,
+                        color: Colors.redAccent,
+                      ),
+                      const SizedBox(width: 8),
+                      Text(
+                        'Continue with Google',
+                        style: textTheme.titleSmall?.copyWith(
+                          color: colors.text,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
                 const SizedBox(height: 20),
 
