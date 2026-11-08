@@ -11,6 +11,8 @@ import '../../features/home/home_screen.dart';
 import '../../features/home/theme_preview_screen.dart';
 import '../../features/lesson/learning_path_screen.dart';
 import '../../features/lesson/lesson_screen.dart';
+import '../../features/listening/audio_player_screen.dart';
+import '../../features/listening/listening_hub_screen.dart';
 import '../../features/onboarding/daily_goal_screen.dart';
 import '../../features/onboarding/learning_goal_screen.dart';
 import '../../features/onboarding/level_screen.dart';
@@ -22,6 +24,7 @@ import '../../features/onboarding/welcome_slides_screen.dart';
 import '../../features/practice/practice_screen.dart';
 import '../../features/profile/profile_screen.dart';
 import '../../features/progress/progress_screen.dart';
+import '../../features/speaking/pronunciation_practice_screen.dart';
 import '../../features/vocabulary/flashcards_screen.dart';
 import '../../features/vocabulary/review_session_screen.dart';
 import '../../features/vocabulary/vocab_hub_screen.dart';
@@ -181,6 +184,28 @@ GoRouter buildAppRouter(WidgetRef ref) {
           final topicId = state.pathParameters['id'] ?? 'g1';
           return GrammarExerciseScreen(topicId: topicId);
         },
+      ),
+
+      // ── Listening Subsystem Routes ──────────────────────────────────
+      GoRoute(
+        path: '/listening',
+        parentNavigatorKey: rootNavigatorKey,
+        builder: (context, state) => const ListeningHubScreen(),
+      ),
+      GoRoute(
+        path: '/listening/player/:id',
+        parentNavigatorKey: rootNavigatorKey,
+        builder: (context, state) {
+          final trackId = state.pathParameters['id'] ?? 'track_1';
+          return AudioPlayerScreen(trackId: trackId);
+        },
+      ),
+
+      // ── Speaking Subsystem Routes ───────────────────────────────────
+      GoRoute(
+        path: '/speaking',
+        parentNavigatorKey: rootNavigatorKey,
+        builder: (context, state) => const PronunciationPracticeScreen(),
       ),
 
       // ── Main shell (4-tab bottom nav) ───────────────────────────────

@@ -1,0 +1,33 @@
+[
+  {
+    "id": "track_1",
+    "title": "Ordering Coffee at an Artisan Roastery",
+    "speaker": "Barista & Customer",
+    "duration": "1:15",
+    "audioUrl": "https://actions.google.com/sounds/v1/ambiences/coffee_shop.ogg",
+    "category": "Daily Conversation",
+    "level": "Beginner",
+    "transcript": "Customer: Good morning! Could I please get a large iced oat milk latte with vanilla syrup?\nBarista: Good morning! Absolutely. Would you like standard espresso beans or our seasonal Ethiopian roast?\nCustomer: I'll try the Ethiopian roast, thank you. And could you make that to go?\nBarista: You got it! That will be four dollars and fifty cents. Tap your card right on the terminal whenever you're ready.\nCustomer: Done! Have a wonderful day.\nBarista: Thanks so much! Your latte will be ready at the pick-up counter in two minutes."
+  },
+  {
+    "id": "track_2",
+    "title": "Checking In at Heathrow Airport",
+    "speaker": "Airline Agent & Passenger",
+    "duration": "1:30",
+    "audioUrl": "https://actions.google.com/sounds/v1/transportation/airplane_cabin.ogg",
+    "category": "Travel & Tourism",
+    "level": "Intermediate",
+    "transcript": "Agent: Good afternoon! Where are you traveling to today?\nPassenger: Hello! I'm flying to Tokyo on flight JL402.\nAgent: Wonderful. May I see your passport and international visa, please?\nPassenger: Here you go. I have one suitcase to check in and one carry-on backpack.\nAgent: Perfect. Please place your suitcase onto the luggage belt. It weighs eighteen kilograms, well within the limit.\nPassenger: That's a relief! Could I possibly request an aisle seat toward the front?\nAgent: Yes, I can assign you seat 14C. Here is your boarding pass. Gate 22 begins boarding at three thirty."
+  },
+  {
+    "id": "track_3",
+    "title": "Quarterly Product Strategy Review",
+    "speaker": "Engineering Lead & Product Manager",
+    "duration": "1:45",
+    "audioUrl": "https://actions.google.com/sounds/v1/office/typing_on_keyboard.ogg",
+    "category": "Business & Work",
+    "level": "Advanced",
+    "transcript": "Product Manager: Thanks for joining, Alex. Let's review our Q3 engineering milestones for the mobile launch.\nEngineer: Happy to be here. We completed the offline data caching architecture ahead of schedule last week.\nProduct Manager: That's fantastic news. How are the performance benchmarks looking on lower-end devices?\nEngineer: Rendering times dropped by forty percent, and memory footprint remains stable under peak load.\nProduct Manager: Excellent! Let's schedule the beta release for next Tuesday and inform the stakeholders."
+  }
+]
+

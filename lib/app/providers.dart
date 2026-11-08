@@ -1,3 +1,5 @@
+import 'dart:convert';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../data/models/user_model.dart';
 import '../data/models/user_preferences.dart';
@@ -9,6 +11,9 @@ import '../data/repositories/lesson_repository.dart';
 import '../data/repositories/spaced_repetition_scheduler.dart';
 import '../data/repositories/vocab_grammar_repository.dart';
 import '../data/models/vocab_grammar_models.dart';
+import '../data/models/audio_track.dart';
+import '../core/services/speech_service.dart';
+import '../core/services/speech_service_impl.dart';
 import '../features/lesson/controllers/lesson_controller.dart';
 
 // ── Repositories ─────────────────────────────────────────────────────────────
@@ -58,6 +63,18 @@ final grammarTopicsProvider = FutureProvider<List<GrammarTopic>>((ref) async {
 final dueWordsProvider = FutureProvider<List<VocabWord>>((ref) async {
   final repo = ref.watch(vocabGrammarRepoProvider);
   return repo.getDueWords();
+});
+
+final speechServiceProvider = Provider<SpeechService>((ref) {
+  return SpeechServiceImpl();
+});
+
+final audioTracksProvider = FutureProvider<List<AudioTrack>>((ref) async {
+  final raw = await rootBundle.loadString('assets/audio_samples.json');
+  final list = (json.decode(raw) as List)
+      .map((e) => AudioTrack.fromJson(e as Map<String, dynamic>))
+      .toList();
+  return list;
 });
 
 final unitsProvider = FutureProvider<List<UnitModel>>((ref) async {

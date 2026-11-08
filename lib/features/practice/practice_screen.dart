@@ -144,7 +144,7 @@ class PracticeScreen extends StatelessWidget {
                 color: colors.success,
                 colors: colors,
                 textTheme: textTheme,
-                onTap: () => context.push('/lesson/1'),
+                onTap: () => context.push('/speaking'),
               ),
 
               AppSpacing.vGapSm,
@@ -156,7 +156,7 @@ class PracticeScreen extends StatelessWidget {
                 color: const Color(0xFF8B5CF6),
                 colors: colors,
                 textTheme: textTheme,
-                onTap: () => context.push('/lesson/2'),
+                onTap: () => context.push('/listening'),
               ),
             ],
           ),

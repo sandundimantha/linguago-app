@@ -40,6 +40,10 @@ dependencies:
   material_symbols_icons: ^4.2809.0
   shared_preferences: ^2.3.5
   flutter_tts: ^4.2.5
+  just_audio: ^0.10.6
+  record: ^7.1.2
+  speech_to_text: ^7.5.0
+  permission_handler: ^13.0.2
 
 dev_dependencies:
   flutter_test:
@@ -97,3 +101,4 @@ flutter:
     - assets/lessons.json
     - assets/vocab.json
     - assets/grammar.json
+    - assets/audio_samples.json
