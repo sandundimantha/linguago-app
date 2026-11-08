@@ -4,6 +4,8 @@ import 'package:go_router/go_router.dart';
 import '../../features/auth/forgot_password_screen.dart';
 import '../../features/auth/log_in_screen.dart';
 import '../../features/auth/sign_up_screen.dart';
+import '../../features/dictionary/dictionary_result_screen.dart';
+import '../../features/dictionary/dictionary_search_screen.dart';
 import '../../features/grammar/grammar_exercise_screen.dart';
 import '../../features/grammar/grammar_hub_screen.dart';
 import '../../features/grammar/rule_card_screen.dart';
@@ -22,8 +24,17 @@ import '../../features/onboarding/placement_test_screen.dart';
 import '../../features/onboarding/splash_screen.dart';
 import '../../features/onboarding/welcome_slides_screen.dart';
 import '../../features/practice/practice_screen.dart';
+import '../../features/profile/edit_profile_screen.dart';
 import '../../features/profile/profile_screen.dart';
+import '../../features/progress/badges_screen.dart';
+import '../../features/progress/friends_screen.dart';
+import '../../features/progress/leaderboard_screen.dart';
 import '../../features/progress/progress_screen.dart';
+import '../../features/progress/streak_calendar_screen.dart';
+import '../../features/settings/about_screen.dart';
+import '../../features/settings/help_faq_screen.dart';
+import '../../features/settings/notification_settings_screen.dart';
+import '../../features/settings/settings_screen.dart';
 import '../../features/speaking/pronunciation_practice_screen.dart';
 import '../../features/vocabulary/flashcards_screen.dart';
 import '../../features/vocabulary/review_session_screen.dart';
@@ -206,6 +217,70 @@ GoRouter buildAppRouter(WidgetRef ref) {
         path: '/speaking',
         parentNavigatorKey: rootNavigatorKey,
         builder: (context, state) => const PronunciationPracticeScreen(),
+      ),
+
+      // ── Dictionary Routes ───────────────────────────────────────────
+      GoRoute(
+        path: '/dictionary',
+        parentNavigatorKey: rootNavigatorKey,
+        builder: (context, state) => const DictionarySearchScreen(),
+      ),
+      GoRoute(
+        path: '/dictionary/result/:id',
+        parentNavigatorKey: rootNavigatorKey,
+        builder: (context, state) {
+          final wordId = state.pathParameters['id'] ?? 'v1';
+          return DictionaryResultScreen(wordId: wordId);
+        },
+      ),
+
+      // ── Progress Subsystem Detail Routes ────────────────────────────
+      GoRoute(
+        path: '/progress/streak',
+        parentNavigatorKey: rootNavigatorKey,
+        builder: (context, state) => const StreakCalendarScreen(),
+      ),
+      GoRoute(
+        path: '/progress/badges',
+        parentNavigatorKey: rootNavigatorKey,
+        builder: (context, state) => const BadgesScreen(),
+      ),
+      GoRoute(
+        path: '/progress/leaderboard',
+        parentNavigatorKey: rootNavigatorKey,
+        builder: (context, state) => const LeaderboardScreen(),
+      ),
+      GoRoute(
+        path: '/progress/friends',
+        parentNavigatorKey: rootNavigatorKey,
+        builder: (context, state) => const FriendsScreen(),
+      ),
+
+      // ── Profile & Settings Routes ───────────────────────────────────
+      GoRoute(
+        path: '/profile/edit',
+        parentNavigatorKey: rootNavigatorKey,
+        builder: (context, state) => const EditProfileScreen(),
+      ),
+      GoRoute(
+        path: '/settings',
+        parentNavigatorKey: rootNavigatorKey,
+        builder: (context, state) => const SettingsScreen(),
+      ),
+      GoRoute(
+        path: '/settings/notifications',
+        parentNavigatorKey: rootNavigatorKey,
+        builder: (context, state) => const NotificationSettingsScreen(),
+      ),
+      GoRoute(
+        path: '/help-faq',
+        parentNavigatorKey: rootNavigatorKey,
+        builder: (context, state) => const HelpFaqScreen(),
+      ),
+      GoRoute(
+        path: '/about',
+        parentNavigatorKey: rootNavigatorKey,
+        builder: (context, state) => const AboutScreen(),
       ),
 
       // ── Main shell (4-tab bottom nav) ───────────────────────────────

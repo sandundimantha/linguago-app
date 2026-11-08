@@ -13,6 +13,8 @@ class LessonRepository {
   static const String _userHeartsKey = 'user_current_hearts';
   static const String _userTotalXpKey = 'user_total_xp';
   static const String _userStreakKey = 'user_active_streak';
+  static const String _dailyXpHistoryKey = 'user_daily_xp_history'; // Map<YYYY-MM-DD, int>
+  static const String _streakDatesKey = 'user_active_streak_dates'; // List<YYYY-MM-DD>
 
   Future<List<UnitModel>> loadUnits() async {
     if (_cachedUnits != null) return _cachedUnits!;
@@ -57,12 +59,25 @@ class LessonRepository {
   }
 
   int getTotalXp() {
-    return _prefs.getInt(_userTotalXpKey) ?? 120;
+    return _prefs.getInt(_userTotalXpKey) ?? 150;
   }
 
   Future<void> addXp(int xp) async {
     final current = getTotalXp();
     await _prefs.setInt(_userTotalXpKey, current + xp);
+
+    // Record today's XP
+    final today = _dateKey(DateTime.now());
+    final history = getDailyXpHistory();
+    history[today] = (history[today] ?? 0) + xp;
+    await _prefs.setString(_dailyXpHistoryKey, json.encode(history));
+
+    // Record active date in streak
+    final streakDates = getStreakDates();
+    if (!streakDates.contains(today)) {
+      streakDates.add(today);
+      await _prefs.setStringList(_streakDatesKey, streakDates);
+    }
   }
 
   int getStreak() {
@@ -72,5 +87,40 @@ class LessonRepository {
   Future<void> setStreak(int streak) async {
     await _prefs.setInt(_userStreakKey, streak);
   }
-}
 
+  Map<String, int> getDailyXpHistory() {
+    final raw = _prefs.getString(_dailyXpHistoryKey);
+    if (raw == null) {
+      // Seed with last 7 days of realistic progress data
+      final now = DateTime.now();
+      return {
+        _dateKey(now.subtract(const Duration(days: 6))): 25,
+        _dateKey(now.subtract(const Duration(days: 5))): 40,
+        _dateKey(now.subtract(const Duration(days: 4))): 30,
+        _dateKey(now.subtract(const Duration(days: 3))): 55,
+        _dateKey(now.subtract(const Duration(days: 2))): 45,
+        _dateKey(now.subtract(const Duration(days: 1))): 50,
+        _dateKey(now): 60,
+      };
+    }
+    try {
+      final decoded = json.decode(raw) as Map<String, dynamic>;
+      return decoded.map((k, v) => MapEntry(k, v as int));
+    } catch (_) {
+      return {};
+    }
+  }
+
+  List<String> getStreakDates() {
+    final list = _prefs.getStringList(_streakDatesKey);
+    if (list == null || list.isEmpty) {
+      final now = DateTime.now();
+      return List.generate(7, (i) => _dateKey(now.subtract(Duration(days: i))));
+    }
+    return list;
+  }
+
+  static String _dateKey(DateTime dt) {
+    return '${dt.year}-${dt.month.toString().padLeft(2, '0')}-${dt.day.toString().padLeft(2, '0')}';
+  }
+}
