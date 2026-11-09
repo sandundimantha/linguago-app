@@ -84,7 +84,7 @@ class _NativeLanguageScreenState extends ConsumerState<NativeLanguageScreen> {
                   vertical: 4,
                 ),
                 itemCount: _languages.length,
-                separatorBuilder: (_, __) => const SizedBox(height: 8),
+                separatorBuilder: (_, _) => const SizedBox(height: 8),
                 itemBuilder: (context, i) {
                   final (flag, name) = _languages[i];
                   final isSelected = _selected == name;

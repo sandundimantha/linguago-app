@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_spacing.dart';
-import '../../core/widgets/primary_button.dart';
 import '../../app/providers.dart';
 import '../../data/models/lesson_models.dart';
 import '../lesson/widgets/lesson_intro_modal.dart';

@@ -7,7 +7,6 @@ import '../../core/utils/tts_service.dart';
 import '../../core/widgets/app_card.dart';
 import '../../core/widgets/primary_button.dart';
 import '../../app/providers.dart';
-import '../../data/models/vocab_grammar_models.dart';
 
 class RuleCardScreen extends ConsumerWidget {
   final String topicId;

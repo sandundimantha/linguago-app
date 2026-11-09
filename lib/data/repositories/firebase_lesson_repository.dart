@@ -1,8 +1,5 @@
-import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import '../models/lesson_models.dart';
 import '../models/user_model.dart';
 import '../models/user_preferences.dart';
 import 'lesson_repository.dart';
@@ -18,12 +15,10 @@ class FirebaseLessonRepository extends LessonRepository {
   String? _userId;
 
   FirebaseLessonRepository(
-    SharedPreferences prefs, {
+    super.prefs, {
     FirebaseFirestore? firestore,
-    String? userId,
-  })  : _firestore = firestore ?? FirebaseFirestore.instance,
-        _userId = userId,
-        super(prefs) {
+    this._userId,
+  })  : _firestore = firestore ?? FirebaseFirestore.instance {
     _initFirestoreSettings();
   }
 

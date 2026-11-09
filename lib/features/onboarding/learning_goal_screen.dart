@@ -77,7 +77,7 @@ class _LearningGoalScreenState extends ConsumerState<LearningGoalScreen> {
                   vertical: 4,
                 ),
                 itemCount: _goals.length,
-                separatorBuilder: (_, __) => const SizedBox(height: 8),
+                separatorBuilder: (_, _) => const SizedBox(height: 8),
                 itemBuilder: (context, i) {
                   final (emoji, title, subtitle) = _goals[i];
                   final isSelected = _selected == title;

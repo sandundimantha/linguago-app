@@ -113,7 +113,7 @@ class _MatchPairsViewState extends State<MatchPairsView> {
               Expanded(
                 child: ListView.separated(
                   itemCount: lefts.length,
-                  separatorBuilder: (_, __) => const SizedBox(height: 12),
+                  separatorBuilder: (_, _) => const SizedBox(height: 12),
                   itemBuilder: (context, i) {
                     final item = lefts[i];
                     final isMatched = widget.userMatches.containsKey(item);
@@ -136,7 +136,7 @@ class _MatchPairsViewState extends State<MatchPairsView> {
               Expanded(
                 child: ListView.separated(
                   itemCount: _shuffledRights.length,
-                  separatorBuilder: (_, __) => const SizedBox(height: 12),
+                  separatorBuilder: (_, _) => const SizedBox(height: 12),
                   itemBuilder: (context, i) {
                     final item = _shuffledRights[i];
                     final isMatched = widget.userMatches.containsValue(item);

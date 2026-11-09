@@ -77,7 +77,7 @@ class LeaderboardScreen extends StatelessWidget {
                   vertical: 8,
                 ),
                 itemCount: _board.length,
-                separatorBuilder: (_, __) => const SizedBox(height: 8),
+                separatorBuilder: (_, _) => const SizedBox(height: 8),
                 itemBuilder: (context, i) {
                   final user = _board[i];
                   return Container(

@@ -44,7 +44,7 @@ class VocabHubScreen extends ConsumerWidget {
               // Spaced Repetition Due Banner
               dueWordsAsync.when(
                 loading: () => const SizedBox.shrink(),
-                error: (_, __) => const SizedBox.shrink(),
+                error: (_, _) => const SizedBox.shrink(),
                 data: (due) {
                   final dueCount = due.length;
                   return Container(

@@ -98,8 +98,8 @@ class _DictionarySearchScreenState
                     vertical: 8,
                   ),
                   itemCount: 5,
-                  separatorBuilder: (_, __) => const SizedBox(height: 12),
-                  itemBuilder: (_, __) => const CardLoadingSkeleton(height: 80),
+                  separatorBuilder: (_, _) => const SizedBox(height: 12),
+                  itemBuilder: (_, _) => const CardLoadingSkeleton(height: 80),
                 ),
                 error: (e, _) => AppErrorScreen(
                   message: 'Failed to load dictionary: $e',
@@ -136,7 +136,7 @@ class _DictionarySearchScreenState
                       vertical: 4,
                     ),
                     itemCount: results.length,
-                    separatorBuilder: (_, __) => const SizedBox(height: 10),
+                    separatorBuilder: (_, _) => const SizedBox(height: 10),
                     itemBuilder: (context, i) {
                       final item = results[i];
                       return Container(

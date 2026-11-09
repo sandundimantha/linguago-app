@@ -120,8 +120,8 @@ class _WordListScreenState extends ConsumerState<WordListScreen> {
                     vertical: 8,
                   ),
                   itemCount: 6,
-                  separatorBuilder: (_, __) => const SizedBox(height: 12),
-                  itemBuilder: (_, __) => const CardLoadingSkeleton(height: 74),
+                  separatorBuilder: (_, _) => const SizedBox(height: 12),
+                  itemBuilder: (_, _) => const CardLoadingSkeleton(height: 74),
                 ),
                 error: (e, _) => AppErrorScreen(
                   message: 'Failed to load words: $e',
@@ -162,7 +162,7 @@ class _WordListScreenState extends ConsumerState<WordListScreen> {
                       vertical: 8,
                     ),
                     itemCount: filtered.length,
-                    separatorBuilder: (_, __) => const SizedBox(height: 10),
+                    separatorBuilder: (_, _) => const SizedBox(height: 10),
                     itemBuilder: (context, i) {
                       final item = filtered[i];
                       final box = srs.getBox(item.id);

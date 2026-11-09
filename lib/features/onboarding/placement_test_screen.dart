@@ -94,7 +94,7 @@ class _PlacementTestScreenState extends State<PlacementTestScreen> {
               Expanded(
                 child: ListView.separated(
                   itemCount: q.options.length,
-                  separatorBuilder: (_, __) => const SizedBox(height: 10),
+                  separatorBuilder: (_, _) => const SizedBox(height: 10),
                   itemBuilder: (context, i) {
                     ChoiceCardState cardState;
                     if (_revealState == null) {

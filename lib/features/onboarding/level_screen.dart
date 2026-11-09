@@ -63,7 +63,7 @@ class _LevelScreenState extends ConsumerState<LevelScreen> {
               Expanded(
                 child: ListView.separated(
                   itemCount: _levels.length,
-                  separatorBuilder: (_, __) => const SizedBox(height: 10),
+                  separatorBuilder: (_, _) => const SizedBox(height: 10),
                   itemBuilder: (context, i) {
                     final (emoji, title, description) = _levels[i];
                     final isSelected = _selected == title;

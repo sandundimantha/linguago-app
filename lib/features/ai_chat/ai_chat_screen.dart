@@ -4,7 +4,6 @@ import 'package:flutter_tts/flutter_tts.dart';
 import 'package:go_router/go_router.dart';
 import '../../app/providers.dart';
 import '../../core/theme/app_colors.dart';
-import '../../core/theme/app_spacing.dart';
 import '../../data/models/ai_chat_models.dart';
 import '../../core/services/ai_tutor_service.dart';
 

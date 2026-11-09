@@ -4,7 +4,6 @@ import 'package:go_router/go_router.dart';
 import 'package:in_app_purchase/in_app_purchase.dart';
 import '../../app/providers.dart';
 import '../../core/theme/app_colors.dart';
-import '../../core/theme/app_spacing.dart';
 import '../../core/widgets/primary_button.dart';
 
 final iapProductsProvider = FutureProvider<List<ProductDetails>>((ref) async {
@@ -256,7 +255,7 @@ class _PaywallScreenState extends ConsumerState<PaywallScreen> {
                         child: CircularProgressIndicator(),
                       ),
                     ),
-                    error: (_, __) => Text(
+                    error: (_, _) => Text(
                       'Failed to load live store products. You can still test checkout.',
                       style: TextStyle(color: colors.mutedText, fontSize: 13),
                     ),

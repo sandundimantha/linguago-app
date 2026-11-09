@@ -68,8 +68,10 @@ class SpeechServiceImpl implements SpeechService {
         onResult: (result) {
           onResult(result.recognizedWords);
         },
-        listenMode: stt.ListenMode.confirmation,
-        localeId: 'en_US',
+        listenOptions: stt.SpeechListenOptions(
+          listenMode: stt.ListenMode.confirmation,
+          localeId: 'en_US',
+        ),
       );
     } catch (e) {
       onError('Listening error: $e');

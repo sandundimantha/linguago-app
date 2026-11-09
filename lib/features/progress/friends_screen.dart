@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_spacing.dart';
-import '../../core/widgets/primary_button.dart';
 
 class FriendItem {
   final String name;
@@ -118,7 +117,7 @@ class _FriendsScreenState extends State<FriendsScreen> {
                   vertical: 4,
                 ),
                 itemCount: _friends.length,
-                separatorBuilder: (_, __) => const SizedBox(height: 10),
+                separatorBuilder: (_, _) => const SizedBox(height: 10),
                 itemBuilder: (context, i) {
                   final friend = _friends[i];
                   return Container(

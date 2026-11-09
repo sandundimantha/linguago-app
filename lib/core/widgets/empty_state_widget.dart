@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../theme/app_colors.dart';
-import '../theme/app_spacing.dart';
 import 'primary_button.dart';
 
 /// Reusable empty state view for empty lists, search queries, or zero progress

@@ -1,18 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:linguago/app/providers.dart';
+import 'package:linguago/data/repositories/preferences_repository.dart';
 import 'package:linguago/app/app.dart';
 
 void main() {
   testWidgets('Home Dashboard full screen and navigation smoke test', (WidgetTester tester) async {
+    SharedPreferences.setMockInitialValues({'linguago_is_first_launch': false});
+    final prefs = await PreferencesRepository.create();
     // Set 360x800 surface size to specifically test small phone responsiveness
     tester.view.physicalSize = const Size(360, 800);
     tester.view.devicePixelRatio = 1.0;
     addTearDown(() => tester.view.resetPhysicalSize());
 
     await tester.pumpWidget(
-      const ProviderScope(
-        child: LinguaGoApp(),
+      ProviderScope(
+        overrides: [
+          useFirebaseProvider.overrideWith((ref) => false),
+          preferencesRepositoryProvider.overrideWith((ref) async => prefs),
+        ],
+        child: const LinguaGoApp(),
       ),
     );
     await tester.pumpAndSettle();
@@ -69,6 +78,6 @@ void main() {
     await tester.pumpAndSettle();
 
     // Practice page should be reached
-    expect(find.text('Practice Hub'), findsOneWidget);
+    expect(find.text('Practice & Skills'), findsOneWidget);
   });
 }

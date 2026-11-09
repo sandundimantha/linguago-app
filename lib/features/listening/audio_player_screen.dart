@@ -5,7 +5,6 @@ import '../../core/theme/app_colors.dart';
 import '../../core/theme/app_spacing.dart';
 import '../../core/widgets/app_card.dart';
 import '../../app/providers.dart';
-import '../../data/models/audio_track.dart';
 
 class AudioPlayerScreen extends ConsumerStatefulWidget {
   final String trackId;

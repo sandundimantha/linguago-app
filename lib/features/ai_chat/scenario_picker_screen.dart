@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import '../../app/providers.dart';
 import '../../core/theme/app_colors.dart';
-import '../../core/theme/app_spacing.dart';
 import '../../data/models/ai_chat_models.dart';
 
 final scenariosListProvider = Provider<List<ScenarioModel>>((ref) {
@@ -224,7 +222,7 @@ class _ScenarioPickerScreenState extends ConsumerState<ScenarioPickerScreen> {
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               itemCount: filteredScenarios.length,
-              separatorBuilder: (_, __) => const SizedBox(height: 14),
+              separatorBuilder: (_, _) => const SizedBox(height: 14),
               itemBuilder: (context, index) {
                 final scenario = filteredScenarios[index];
                 return _buildScenarioCard(scenario, colors, textTheme);
